@@ -1,12 +1,38 @@
 {{ define "main" }}
-
 <div class="home-layout">
+  <section class="home-content">
+    {{ with .Content }}
+      {{ . }}
+    {{ else }}
+      <p>Personal notes, science, writing, experiments.</p>
+    {{ end }}
+
+    <!-- Блок обновлений -->
+    <div class="terminal-box updates-box">
+      <div class="terminal-title">updates</div>
+      {{ $pages := where .Site.RegularPages "Section" "!=" "" }}
+      {{ $recent := $pages | first 5 }}
+      {{ if $recent }}
+        <ul class="updates-list">
+        {{ range $recent }}
+          <li>
+            В раздел <strong>{{ .Section }}</strong> добавлена публикация <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            <span class="update-date">{{ .Date.Format "02.01.2006" }}</span>
+            {{ with .Params.tags }}
+              <span class="update-tags">#{{ del . " #" }}</span>
+            {{ end }}
+          </li>
+        {{ end }}
+        </ul>
+      {{ else }}
+        <p>Нет обновлений.</p>
+      {{ end }}
+    </div>
+  </section>
 
   <aside class="sidebar">
-
     <div class="terminal-box">
       <div class="terminal-title">skills</div>
-
       <pre><code>SQL
 Python
 Linux
@@ -18,21 +44,15 @@ AI Assisted Development</code></pre>
 
     <div class="terminal-box">
       <div class="terminal-title">languages</div>
-
       <pre><code>English
 German</code></pre>
     </div>
 
+    <div class="terminal-box">
+      <div class="terminal-title">contacts</div>
+      <pre><code>email: victsav@gmail.com
+tg: @strmcrown</code></pre>
+    </div>
   </aside>
-
-  <section class="home-content">
-    {{ with .Content }}
-      {{ . }}
-    {{ else }}
-      <p>Personal notes, science, writing, experiments.</p>
-    {{ end }}
-  </section>
-
 </div>
-
 {{ end }}
