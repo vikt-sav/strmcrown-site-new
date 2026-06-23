@@ -1,0 +1,38 @@
+{{ define "main" }}
+
+<div class="home-layout">
+
+  <aside class="sidebar">
+
+    <div class="terminal-box">
+      <div class="terminal-title">skills</div>
+
+      <pre><code>SQL
+Python
+Linux
+Git
+Docker
+Data Stack
+AI Assisted Development</code></pre>
+    </div>
+
+    <div class="terminal-box">
+      <div class="terminal-title">languages</div>
+
+      <pre><code>English
+German</code></pre>
+    </div>
+
+  </aside>
+
+  <section class="home-content">
+    {{ with .Content }}
+      {{ . }}
+    {{ else }}
+      <p>Personal notes, science, writing, experiments.</p>
+    {{ end }}
+  </section>
+
+</div>
+
+{{ end }}

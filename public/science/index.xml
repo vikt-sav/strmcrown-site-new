@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Наука on STRMCROWN</title>
+    <link>http://localhost:1313/science/</link>
+    <description>Recent content in Наука on STRMCROWN</description>
+    <generator>Hugo</generator>
+    <language>ru</language>
+    <lastBuildDate>Sat, 20 Jun 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/science/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Test Page</title>
+      <link>http://localhost:1313/science/test/</link>
+      <pubDate>Sat, 20 Jun 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/science/test/</guid>
+      <description>&lt;p&gt;Hello world from science section.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

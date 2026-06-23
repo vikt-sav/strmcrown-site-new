@@ -1,0 +1,43 @@
+baseURL = "http://localhost/"
+languageCode = "ru"
+title = "STRMCROWN"
+
+[taxonomies]
+tag = "tags"
+
+[menu]
+
+[[menu.main]]
+name = "Мысли"
+url = "/thoughts/"
+weight = 1
+
+[[menu.main]]
+name = "Наука"
+url = "/science/"
+weight = 2
+
+[[menu.main]]
+name = "Программы"
+url = "/programs/"
+weight = 3
+
+[[menu.main]]
+name = "Учёба"
+url = "/study/"
+weight = 4
+
+[[menu.main]]
+name = "Чтение"
+url = "/reading/"
+weight = 5
+
+[[menu.main]]
+name = "Фото"
+url = "/photos/"
+weight = 6
+
+[[menu.main]]
+name = "hacks&contests"
+url = "/hacks-contests/"
+weight = 6

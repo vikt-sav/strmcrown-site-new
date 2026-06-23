@@ -1,0 +1,79 @@
+{{ define "main" }}
+<article class="reading-page">
+  <h1>{{ .Title }}</h1>
+
+  {{ with .Content }}
+  <div class="section-description reading-intro">
+    {{ . }}
+  </div>
+  {{ end }}
+
+  {{ $pages := .RegularPages.ByDate.Reverse }}
+  {{ $fiction := where $pages "Params.group" "художка" }}
+  {{ $technical := where $pages "Params.group" "техничка" }}
+
+  <div class="reading-grid">
+    <section class="reading-column">
+      <div class="reading-column-title">художка</div>
+
+      {{ if gt (len $fiction) 0 }}
+        <div class="reading-list">
+          {{ range $fiction }}
+            {{ $book := . }}
+            <article class="reading-card">
+              {{ with $book.Params.cover }}
+                <img
+                  class="reading-cover"
+                  src="{{ . | relURL }}"
+                  alt="{{ $book.Title }}"
+                  loading="lazy"
+                >
+              {{ end }}
+
+              <div class="reading-card-body">
+                <h2 class="reading-item-title">{{ $book.Title }}</h2>
+                <div class="reading-item-comment">
+                  {{ $book.Content }}
+                </div>
+              </div>
+            </article>
+          {{ end }}
+        </div>
+      {{ else }}
+        <div class="empty-state">Тут пока пусто.</div>
+      {{ end }}
+    </section>
+
+    <section class="reading-column">
+      <div class="reading-column-title">техничка</div>
+
+      {{ if gt (len $technical) 0 }}
+        <div class="reading-list">
+          {{ range $technical }}
+            {{ $book := . }}
+            <article class="reading-card">
+              {{ with $book.Params.cover }}
+                <img
+                  class="reading-cover"
+                  src="{{ . | relURL }}"
+                  alt="{{ $book.Title }}"
+                  loading="lazy"
+                >
+              {{ end }}
+
+              <div class="reading-card-body">
+                <h2 class="reading-item-title">{{ $book.Title }}</h2>
+                <div class="reading-item-comment">
+                  {{ $book.Content }}
+                </div>
+              </div>
+            </article>
+          {{ end }}
+        </div>
+      {{ else }}
+        <div class="empty-state">Тут пока пусто.</div>
+      {{ end }}
+    </section>
+  </div>
+</article>
+{{ end }}
