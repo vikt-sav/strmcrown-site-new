@@ -19,7 +19,7 @@
             В раздел <strong>{{ .Section }}</strong> добавлена публикация <a href="{{ .RelPermalink }}">{{ .Title }}</a>
             <span class="update-date">{{ .Date.Format "02.01.2006" }}</span>
             {{ with .Params.tags }}
-              <span class="update-tags">#{{ del . " #" }}</span>
+              <span class="update-tags">#{{ delimit . " #" }}</span>
             {{ end }}
           </li>
         {{ end }}
