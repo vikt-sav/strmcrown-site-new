@@ -41,3 +41,8 @@ weight = 6
 name = "hacks&contests"
 url = "/hacks-contests/"
 weight = 6
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
