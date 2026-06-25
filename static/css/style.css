@@ -395,3 +395,26 @@ pre code {
   border: none;
   background: transparent;
 }
+
+/* Убираем зелёный цвет у содержимого внутри блоков */
+.terminal-box pre code {
+  color: var(--text); /* обычный цвет текста */
+  text-shadow: none; /* убираем свечение */
+}
+
+/* Для заголовков оставляем зелёный, но без сильного свечения */
+.terminal-title {
+  color: #8fffaa;
+  text-shadow: none; /* убираем свечение, чтобы не выглядело ссылкой */
+  font-weight: 600;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+/* Но для реальных ссылок внутри заголовков (например, в hacks&contests) оставляем подчёркивание при наведении */
+.terminal-title a {
+  color: #8fffaa;
+  text-decoration: none;
+}
+.terminal-title a:hover {
+  text-decoration: underline;
+}
