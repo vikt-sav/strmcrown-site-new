@@ -1,66 +1,60 @@
 {{ define "main" }}
-<div class="home-layout">
-  <section class="home-content">
-    {{ with .Content }}
-      {{ . }}
-    {{ else }}
-      <p>Personal notes, science, writing, experiments.</p>
-    {{ end }}
 
-    <!-- Блок обновлений -->
-    <div class="terminal-box updates-box">
-      <div class="terminal-title">📰 updates</div>
-      {{ $pages := where .Site.RegularPages "Section" "!=" "" }}
-      {{ $recent := $pages | first 5 }}
-      {{ if $recent }}
-        <ul class="updates-list">
-        {{ range $recent }}
-          <li>
-            <span class="update-date">{{ .Date.Format "02.01.2006" }}</span>
-            <span class="update-text">
-              В раздел <strong>{{ .Section }}</strong> добавлена публикация <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-            </span>
-            {{ with .Params.tags }}
-              <span class="update-tags">#{{ delimit . " #" }}</span>
-            {{ end }}
-          </li>
+<section class="hero">
+
+    <img
+        src="/favic1.jpg"
+        alt="Victor Savostyanov"
+        class="avatar"
+    >
+
+    <div class="hero-content">
+
+        <h1>Viktor</h1>
+
+        <p class="subtitle">
+            Development · AI · Data Science · Open Source
+        </p>
+
+        <p>
+            Building local AI systems, NLP pipelines and software projects.
+            Writing about programming, machine learning and technical experiments.
+        </p>
+
+    </div>
+
+</section>
+
+<section>
+
+    {{ .Content }}
+
+</section>
+
+<section>
+
+    <h2>Recent Posts</h2>
+
+    <ul class="post-list">
+
+        {{ range first 20 (.Site.RegularPages.ByDate.Reverse) }}
+
+        <li>
+
+            <a href="{{ .RelPermalink }}">
+                {{ .Title }}
+            </a>
+
+            <div class="post-date">
+                {{ .Date.Format "2006-01-02" }}
+            </div>
+
+        </li>
+
         {{ end }}
-        </ul>
-        <div class="updates-footer">
-          <a href="/" class="updates-all">Все обновления →</a>
-        </div>
-      {{ else }}
-        <p>Нет обновлений.</p>
-      {{ end }}
-    </div>
-  </section>
 
-  <aside class="sidebar">
-    <div class="terminal-box">
-      <div class="terminal-title">⚙️ skills</div>
-      <pre><code>SQL
-Python
-Linux
-Git
-Docker
-Data Stack
-AI Assisted Development
-ML Pipelines</code></pre>
-    </div>
+    </ul>
 
-    <div class="terminal-box">
-      <div class="terminal-title">🌐 languages</div>
-      <pre><code>Русский
-English
-Deutsch
-Français</code></pre>
-    </div>
+</section>
 
-    <div class="terminal-box">
-      <div class="terminal-title">✉️ contacts</div>
-      <pre><code>email: victsav@gmail.com
-tg: @strmcrown</code></pre>
-    </div>
-  </aside>
-</div>
 {{ end }}

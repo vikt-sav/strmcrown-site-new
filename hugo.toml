@@ -1,4 +1,4 @@
-baseURL = "http://localhost/"
+baseURL = "https://strmcrown.dev/"
 languageCode = "ru"
 title = "STRMCROWN"
 
@@ -6,6 +6,11 @@ title = "STRMCROWN"
 tag = "tags"
 
 [menu]
+
+[[menu.main]]
+name = "About"
+url = "/about/"
+weight = 0
 
 [[menu.main]]
 name = "Мысли"
@@ -38,9 +43,9 @@ url = "/photos/"
 weight = 6
 
 [[menu.main]]
-name = "hacks&contests"
+name = "Hacks & Contests"
 url = "/hacks-contests/"
-weight = 6
+weight = 7
 
 [markup]
   [markup.goldmark]
