@@ -43,21 +43,22 @@ a:hover {
 .page {
   max-width: 760px;
   margin: 0 auto;
-  padding: 28px 22px 64px;
+  padding: 40px 22px 80px; /* увеличенные отступы */
 }
 
 .site-header {
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  margin-bottom: 42px;
-  padding-bottom: 18px;
+  gap: 18px;
+  margin-bottom: 48px;
+  padding-bottom: 24px;
   border-bottom: 1px solid var(--border);
 }
 
 .site-title {
-  font-size: 1.05rem;
-  font-weight: 700;
+  font-size: 1.8rem;        /* увеличен, стал более выразительным */
+  font-weight: 300;         /* тонкое начертание */
+  letter-spacing: 0.08em;   /* увеличенный кернинг */
   text-transform: lowercase;
   color: var(--text);
 }
@@ -65,120 +66,103 @@ a:hover {
 .site-nav {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px 18px;
+  gap: 6px 16px;
 }
 
 .site-nav a {
   color: var(--muted);
+  font-weight: 600;          /* жирный шрифт */
+  letter-spacing: 0.02em;
+  position: relative;
+}
+
+.site-nav a:not(:last-child)::after {
+  content: " | ";
+  color: var(--muted);
+  opacity: 0.4;
+  margin-left: 16px;
+  pointer-events: none;
 }
 
 .site-nav a:hover {
   color: var(--text);
 }
 
+.site-nav a.active {
+  color: var(--text);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
 main {
   display: block;
 }
 
-article > * + * {
-  margin-top: 1.15rem;
+/* Ограничение ширины текста */
+.home-content p,
+.home-content ul,
+.home-content ol {
+  max-width: 70ch;
 }
 
-h1, h2, h3 {
-  margin: 0;
-  line-height: 1.25;
-  font-weight: 700;
+/* Блоки обновлений */
+.updates-box {
+  margin-top: 2.5rem;
 }
 
-h1 {
-  font-size: 2.2rem;
-  letter-spacing: -0.03em;
+.updates-box .terminal-title {
+  font-size: 1.3rem;        /* крупнее */
 }
 
-p {
-  margin: 0;
-}
-
-ul {
-  margin: 0;
-  padding-left: 1.2rem;
-}
-
-hr {
-  border: 0;
-  border-top: 1px solid var(--border);
-  margin: 2rem 0;
-}
-
-code {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-}
-
-p code {
-  padding: 0.15rem 0.4rem;
-  background: var(--surface-2);
-  border: 1px solid var(--border);
-  border-radius: 6px;
-}
-
-pre {
-  margin: 1.5rem 0;
-  padding: 1rem;
-  overflow-x: auto;
-  background: var(--surface-2);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-}
-
-pre code {
-  background: transparent;
-  border: none;
-  padding: 0;
-}
-
-.post-list {
+.updates-list {
   list-style: none;
   padding: 0;
-  margin-top: 1.5rem;
+  margin: 0;
 }
 
-.post-item {
-  padding: 0.9rem 0;
+.updates-list li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 10px;
+  padding: 0.6rem 0;
   border-bottom: 1px solid var(--border);
+  font-size: 0.95rem;
 }
 
-.post-item:last-child {
+.updates-list li:last-child {
   border-bottom: none;
 }
 
-.post-link {
+.update-date {
+  color: var(--muted);
   font-weight: 600;
+  font-size: 0.85rem;
+  min-width: 80px;
+  flex-shrink: 0;
 }
 
-.post-meta {
+.update-text {
+  flex: 1;
+}
+
+.update-tags {
+  color: #8ab4f8;
   font-size: 0.9rem;
-  color: var(--muted);
-  margin-top: 0.25rem;
 }
 
-.section-description {
-  color: var(--muted);
-  margin-top: 0.5rem;
+.updates-footer {
+  margin-top: 1rem;
+  text-align: right;
+  font-size: 0.95rem;
 }
 
-.empty-state {
-  margin-top: 2rem;
-  padding: 2rem;
-  border: 1px dashed var(--border);
-  border-radius: 12px;
-  background: var(--surface-2);
+.updates-all {
   color: var(--muted);
-  text-align: center;
+  font-weight: 500;
 }
-
-.site-nav a.active {
+.updates-all:hover {
   color: var(--text);
-  font-weight: 600;
 }
 
 /* ---------- HOME PAGE ---------- */
@@ -186,14 +170,14 @@ pre code {
 .home-layout {
   display: grid;
   grid-template-columns: 260px 1fr;
-  gap: 40px;
+  gap: 50px;                /* увеличенный отступ между колонками */
   align-items: start;
 }
 
 .sidebar {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 24px;                /* увеличенный отступ между блоками */
 }
 
 .terminal-box {
@@ -206,14 +190,10 @@ pre code {
 .terminal-title {
   padding: 0.7rem 1rem;
   border-bottom: 1px solid var(--border);
-
   color: #8fffaa;
   font-weight: 600;
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-
-  text-shadow:
-    0 0 4px rgba(143,255,170,.4),
-    0 0 8px rgba(143,255,170,.25);
+  text-shadow: none;        /* убираем свечение */
 }
 
 .terminal-box pre {
@@ -225,7 +205,8 @@ pre code {
 }
 
 .terminal-box code {
-  color: var(--text);
+  color: var(--text);       /* обычный цвет текста */
+  text-shadow: none;
 }
 
 .home-content {
@@ -237,14 +218,43 @@ pre code {
 @media (max-width: 700px) {
   .home-layout {
     grid-template-columns: 1fr;
+    gap: 32px;
   }
 
   .sidebar {
     order: 2;
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 16px;
+    padding-bottom: 8px;
+    scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .sidebar .terminal-box {
+    min-width: 200px;
+    flex-shrink: 0;
   }
 
   .home-content {
     order: 1;
+  }
+
+  .site-title {
+    font-size: 1.6rem;
+  }
+
+  .site-nav a:not(:last-child)::after {
+    margin-left: 8px;
+  }
+
+  .updates-list li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+  }
+  .update-date {
+    min-width: auto;
   }
 }
 
@@ -278,9 +288,7 @@ pre code {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   font-weight: 600;
   letter-spacing: 0.02em;
-  text-shadow:
-    0 0 4px rgba(143, 255, 170, 0.45),
-    0 0 10px rgba(143, 255, 170, 0.22);
+  text-shadow: none;
 }
 
 .reading-list {
@@ -347,32 +355,8 @@ pre code {
   }
 }
 
-/* ---------- UPDATES ---------- */
-.updates-box {
-  margin-top: 2rem;
-}
-.updates-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.updates-list li {
-  padding: 0.5rem 0;
-  border-bottom: 1px solid var(--border);
-  font-size: 0.95rem;
-}
-.updates-list li:last-child {
-  border-bottom: none;
-}
-.update-date {
-  color: var(--muted);
-  margin: 0 0.5rem;
-}
-.update-tags {
-  color: #8ab4f8;
-}
-
 /* ---------- HACKS & CONTESTS ---------- */
+
 .hacks-list {
   display: flex;
   flex-direction: column;
@@ -394,27 +378,4 @@ pre code {
   padding: 0.5rem 1rem;
   border: none;
   background: transparent;
-}
-
-/* Убираем зелёный цвет у содержимого внутри блоков */
-.terminal-box pre code {
-  color: var(--text); /* обычный цвет текста */
-  text-shadow: none; /* убираем свечение */
-}
-
-/* Для заголовков оставляем зелёный, но без сильного свечения */
-.terminal-title {
-  color: #8fffaa;
-  text-shadow: none; /* убираем свечение, чтобы не выглядело ссылкой */
-  font-weight: 600;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-}
-
-/* Но для реальных ссылок внутри заголовков (например, в hacks&contests) оставляем подчёркивание при наведении */
-.terminal-title a {
-  color: #8fffaa;
-  text-decoration: none;
-}
-.terminal-title a:hover {
-  text-decoration: underline;
 }

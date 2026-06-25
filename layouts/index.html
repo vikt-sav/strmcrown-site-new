@@ -9,21 +9,26 @@
 
     <!-- Блок обновлений -->
     <div class="terminal-box updates-box">
-      <div class="terminal-title">updates</div>
+      <div class="terminal-title">📰 updates</div>
       {{ $pages := where .Site.RegularPages "Section" "!=" "" }}
       {{ $recent := $pages | first 5 }}
       {{ if $recent }}
         <ul class="updates-list">
         {{ range $recent }}
           <li>
-            В раздел <strong>{{ .Section }}</strong> добавлена публикация <a href="{{ .RelPermalink }}">{{ .Title }}</a>
             <span class="update-date">{{ .Date.Format "02.01.2006" }}</span>
+            <span class="update-text">
+              В раздел <strong>{{ .Section }}</strong> добавлена публикация <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            </span>
             {{ with .Params.tags }}
               <span class="update-tags">#{{ delimit . " #" }}</span>
             {{ end }}
           </li>
         {{ end }}
         </ul>
+        <div class="updates-footer">
+          <a href="/" class="updates-all">Все обновления →</a>
+        </div>
       {{ else }}
         <p>Нет обновлений.</p>
       {{ end }}
@@ -32,27 +37,24 @@
 
   <aside class="sidebar">
     <div class="terminal-box">
-      <div class="terminal-title">skills</div>
+      <div class="terminal-title">⚙️ skills</div>
       <pre><code>SQL
 Python
 Linux
 Git
 Docker
 Data Stack
-AI Assisted Development
-ML Pipelines</code></pre>
+AI Assisted Development</code></pre>
     </div>
 
     <div class="terminal-box">
-      <div class="terminal-title">languages</div>
-      <pre><code>Русский
-English
-Deutsch
-Français</code></pre>
+      <div class="terminal-title">🌐 languages</div>
+      <pre><code>English
+German</code></pre>
     </div>
 
     <div class="terminal-box">
-      <div class="terminal-title">contacts</div>
+      <div class="terminal-title">✉️ contacts</div>
       <pre><code>email: victsav@gmail.com
 tg: @strmcrown</code></pre>
     </div>
