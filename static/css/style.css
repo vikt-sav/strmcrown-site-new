@@ -49,25 +49,33 @@ header {
 }
 
 nav {
+
     display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
+
+    flex-wrap: nowrap;
+
+    gap: 1.25rem;
+
+    align-items: center;
+
+    overflow-x: auto;
+
+    white-space: nowrap;
+
+    margin-bottom: 3rem;
 }
 
 nav a {
+
     color: var(--link);
+
     text-decoration: none;
+
+    flex-shrink: 0;
 }
 
 nav a:hover {
-    color: var(--link-hover);
-}
 
-a {
-    color: var(--link);
-}
-
-a:hover {
     color: var(--link-hover);
 }
 
