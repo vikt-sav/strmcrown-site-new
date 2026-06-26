@@ -14,10 +14,30 @@
 
     <link rel="stylesheet" href="/css/style.css">
     <link rel="icon" href="/favic1.jpg">
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="9e39dd1c-91fa-410a-aa1f-a16b5bf6f7f2"></script>
 </head>
 
-<body>
+<script>
 
+window.addEventListener("scroll", function () {
+
+    const pageHeight =
+        document.documentElement.scrollHeight -
+        window.innerHeight;
+
+    const progress =
+        window.scrollY / pageHeight;
+
+    document
+        .getElementById("reading-progress")
+        .style.width = (progress * 100) + "%";
+
+});
+
+</script>
+
+<body>
+<div id="reading-progress"></div>
 <header>
 
     <nav>

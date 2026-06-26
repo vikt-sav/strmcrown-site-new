@@ -249,3 +249,33 @@ pre code {
         font-size: 2rem;
     }
 }
+
+.post-meta{
+
+    color:#9b9b9b;
+
+    margin-bottom:2rem;
+
+    font-size:.95rem;
+}
+
+/* Progress bar */
+
+#reading-progress {
+
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+
+    width: 0;
+
+    height: 3px;
+
+    background: #c47a3a;
+
+    z-index: 9999;
+
+    transition: width .1s linear;
+}
