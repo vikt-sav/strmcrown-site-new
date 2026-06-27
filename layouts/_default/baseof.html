@@ -10,6 +10,11 @@
 
 {{ partial "header.html" . }}
 
+<!-- HERO (ТОЛЬКО ДЛЯ ГЛАВНОЙ) -->
+{{ if .IsHome }}
+  {{ partial "hero.html" . }}
+{{ end }}
+
 <main class="container">
 
   {{ block "main" . }}{{ end }}

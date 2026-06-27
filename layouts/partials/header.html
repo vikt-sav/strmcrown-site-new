@@ -1,18 +1,19 @@
 <header class="site-header">
+  <div class="container">
 
-  <nav class="site-nav">
+    <nav class="site-nav">
 
-    {{ range .Site.Menus.main }}
-      <a
-        href="{{ .URL }}"
-        class="{{ if $.IsMenuCurrent "main" . }}active{{ end }}">
-        {{ .Name }}
-      </a>
-    {{ end }}
+      {{ range .Site.Menus.main }}
+        <a
+          href="{{ .URL }}"
+          class="{{ if $.IsMenuCurrent "main" . }}active{{ end }}">
+          {{ .Name }}
+        </a>
+      {{ end }}
 
-    <!-- Theme toggle -->
-    {{ partial "theme-toggle.html" . }}
+      {{ partial "theme-toggle.html" . }}
 
-  </nav>
+    </nav>
 
+  </div>
 </header>
