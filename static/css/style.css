@@ -347,3 +347,53 @@ a:hover {
 .resource-link:hover {
   text-decoration: underline;
 }
+
+/* ========================
+   Reading Section
+======================== */
+
+.reading-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 24px;
+  margin-top: 20px;
+  margin-bottom: 60px;
+}
+
+.book-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 26px;
+  box-shadow: 0 8px 25px var(--shadow);
+  transition: all 0.25s ease;
+}
+
+.book-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 35px var(--shadow);
+}
+
+.book-header h3 {
+  margin: 0 0 6px 0;
+  font-size: 1.25rem;
+}
+
+.book-author {
+  margin: 0 0 16px 0;
+  color: var(--muted);
+  font-style: italic;
+}
+
+.book-rating {
+  font-size: 1.35rem;
+  letter-spacing: 2px;
+  margin-bottom: 14px;
+  color: #f4b400;
+}
+
+.book-review {
+  color: var(--text);
+  line-height: 1.6;
+  margin: 0;
+}
