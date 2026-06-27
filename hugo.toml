@@ -22,9 +22,7 @@ tag = "tags"
 category = "categories"
 
 [markup]
-
 [markup.goldmark]
-
 [markup.goldmark.renderer]
 unsafe = true
 
@@ -33,57 +31,9 @@ style = "github-dark"
 lineNos = false
 
 [params]
-
 author = "Viktor Savostyanov"
 description = "Личный блог о программировании, AI, Data Science и исследованиях."
 
 avatar = "/avatar.jpg"
 
 accent = "#c47a3a"
-
-github = ""
-telegram = ""
-email = ""
-
-[[menu.main]]
-name = "Главная"
-url = "/"
-weight = -100
-
-[[menu.main]]
-name = "Мысли"
-url = "/thoughts/"
-weight = 1
-
-[[menu.main]]
-name = "Наука"
-url = "/science/"
-weight = 2
-
-[[menu.main]]
-name = "Программы"
-url = "/programs/"
-weight = 3
-
-[[menu.main]]
-name = "Учёба"
-url = "/study/"
-weight = 4
-
-[[menu.main]]
-name = "Чтение"
-url = "/reading/"
-weight = 5
-
-[[menu.main]]
-name = "Конкурсы"
-url = "/hacks-contests/"
-weight = 6
-
-[[menu.main]]
-name = "О сайте"
-url = "/about/"
-weight = 7
-
-[markup.goldmark.renderer]
-unsafe = true
