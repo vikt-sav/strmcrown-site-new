@@ -2,68 +2,101 @@
 
 <section class="hero">
 
-    <img
-        src="/favic1.jpg"
-        alt="Виктор Савостьянов"
-        class="avatar"
-    >
+<img
+class="avatar"
+src="{{ .Site.Params.avatar }}"
+alt="Viktor Savostyanov">
 
-    <div class="hero-content">
+<div class="hero-text">
 
-        <h1></h1>
+<h1>
 
-        <p class="subtitle">
-            Development · AI · Data Science · Open Source
-        </p>
+Виктор Савостьянов
 
-        <p>
-            Создаю локальные ИИ-системы, NLP-пайплайны и программные проекты.
-        </p>
+</h1>
 
-        <p>
-            Пишу о программировании, машинном обучении,
-            науке и технических экспериментах.
-        </p>
+<p class="hero-subtitle">
 
-    </div>
+Development · AI · Data Science · Open Source
 
-</section>
+</p>
 
-<section>
+<p>
 
-    {{ .Content }}
+Исследователь и разработчик, интересующийся искусственным интеллектом,
+машинным обучением, NLP, локальными LLM и разработкой ПО.
+
+</p>
+
+</div>
 
 </section>
 
+{{ if .Content }}
+
+<section class="homepage-content">
+
+{{ .Content }}
+
+</section>
+
+{{ end }}
+
 <section>
 
-    <h2>Последние записи</h2>
+<h2>
 
-    <ul class="post-list">
+Последние записи
 
-        {{ range first 20 (.Site.RegularPages.ByDate.Reverse) }}
+</h2>
 
-        <li>
+<ul class="post-list">
 
-            <a href="{{ .RelPermalink }}">
-                {{ .Title }}
-            </a>
+{{ range first 10 (where .Site.RegularPages "Section" "ne" "") }}
 
-            <div class="post-date">
+<li>
 
-{{ .Date.Format "02 Jan 2006" }}
+<a href="{{ .RelPermalink }}">
+
+{{ .Title }}
+
+</a>
+
+<div class="post-meta">
+
+{{ if not .Date.IsZero }}
+
+{{ .Date.Format "02.01.2006" }}
 
 ·
 
-{{ .ReadingTime }} мин
+{{ end }}
 
-            </div>
+{{ .ReadingTime }} мин чтения
 
-        </li>
+{{ with .Params.tags }}
 
-        {{ end }}
+·
 
-    </ul>
+{{ range first 3 . }}
+
+<span class="tag">
+
+{{ . }}
+
+</span>
+
+{{ end }}
+
+{{ end }}
+
+</div>
+
+</li>
+
+{{ end }}
+
+</ul>
 
 </section>
 

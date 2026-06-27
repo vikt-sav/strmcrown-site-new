@@ -2,7 +2,11 @@
 
 <header class="section-header">
 
-<h1>{{ .Title }}</h1>
+<h1>
+
+{{ .Title }}
+
+</h1>
 
 {{ if .Content }}
 
@@ -16,21 +20,19 @@
 
 </header>
 
+{{ if gt (len .Pages) 0 }}
+
 <ul class="post-list">
 
 {{ range .Pages.ByDate.Reverse }}
 
 <li>
 
-<h2>
-
 <a href="{{ .RelPermalink }}">
 
 {{ .Title }}
 
 </a>
-
-</h2>
 
 <div class="post-meta">
 
@@ -46,20 +48,20 @@
 
 </div>
 
-{{ with .Summary }}
-
-<p>
-
-{{ . }}
-
-</p>
-
-{{ end }}
-
 </li>
 
 {{ end }}
 
 </ul>
+
+{{ else }}
+
+<p>
+
+Пока здесь нет публикаций.
+
+</p>
+
+{{ end }}
 
 {{ end }}

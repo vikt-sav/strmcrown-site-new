@@ -1,39 +1,94 @@
 {{ define "main" }}
 
-<article>
+<article class="article">
 
-    <h1>{{ .Title }}</h1>
-    <div class="post-meta">
+<header class="article-header">
 
-{{ .Date.Format "02 Jan 2006" }}
+<h1>{{ .Title }}</h1>
 
-·
+<div class="post-meta">
+
+{{ if not .Date.IsZero }}
+
+<time datetime="{{ .Date.Format "2006-01-02" }}">
+{{ .Date.Format "02.01.2006" }}
+</time>
+
+{{ end }}
+
+{{ if gt .ReadingTime 0 }}
+
+{{ if not .Date.IsZero }} · {{ end }}
 
 {{ .ReadingTime }} мин чтения
 
-    </div>
+{{ end }}
 
-    <p class="post-date">
-        {{ .Date.Format "02 Jan 2006" }}
-    </p>
+{{ if gt .WordCount 0 }}
 
-    {{ with .Params.tags }}
+·
 
-    <div class="tags">
+{{ .WordCount }} слов
 
-        {{ range . }}
+{{ end }}
 
-        <span class="tag">
-            {{ . }}
-        </span>
+{{ with .Params.tags }}
 
-        {{ end }}
+<div class="tags">
 
-    </div>
+{{ range . }}
 
-    {{ end }}
+<a
+class="tag"
+href="/tags/{{ . | urlize }}/">
 
-    {{ .Content }}
+{{ . }}
+
+</a>
+
+{{ end }}
+
+</div>
+
+{{ end }}
+
+</div>
+
+</header>
+
+<div class="article-content">
+
+{{ .Content }}
+
+</div>
+
+<nav class="article-nav">
+
+{{ with .PrevInSection }}
+
+<a
+class="prev"
+href="{{ .RelPermalink }}">
+
+← {{ .Title }}
+
+</a>
+
+{{ end }}
+
+{{ with .NextInSection }}
+
+<a
+class="next"
+href="{{ .RelPermalink }}">
+
+{{ .Title }} →
+
+</a>
+
+{{ end }}
+
+</nav>
 
 </article>
 

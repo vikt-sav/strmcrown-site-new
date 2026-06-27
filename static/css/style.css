@@ -1,281 +1,336 @@
-:root {
+/* =========================
+   Base / Reset
+========================= */
 
-    --bg: #181818;
-    --fg: #ece8e1;
-
-    --muted: #9c9c9c;
-
-    --link: #c47a3a;
-    --link-hover: #db8c46;
-
-    --border: #2a2a2a;
-
-    --content-width: 760px;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-* {
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
+html, body {
+  margin: 0;
+  padding: 0;
 }
 
 body {
-
-    margin: 0 auto;
-
-    max-width: var(--content-width);
-
-    padding: 2rem 1.5rem 4rem;
-
-    background: var(--bg);
-
-    color: var(--fg);
-
-    font-family:
-        Georgia,
-        Charter,
-        Cambria,
-        serif;
-
-    font-size: 19px;
-
-    line-height: 1.75;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-header {
-    margin-bottom: 4rem;
+/* =========================
+   Theme
+========================= */
+
+:root {
+  --bg: #ffffff;
+  --text: #1a1a1a;
+  --muted: #666;
+  --border: #eaeaea;
+  --card: #ffffff;
+  --link: #4f46e5;
+  --code-bg: #f6f6f6;
+  --shadow: rgba(0,0,0,0.06);
 }
 
-nav {
-
-    display: flex;
-
-    flex-wrap: nowrap;
-
-    gap: 1.25rem;
-
-    align-items: center;
-
-    overflow-x: auto;
-
-    white-space: nowrap;
-
-    margin-bottom: 3rem;
+html[data-theme="dark"] {
+  --bg: #0b0f17;
+  --text: #e5e7eb;
+  --muted: #9aa4b2;
+  --border: #1f2937;
+  --card: #111827;
+  --link: #8b93ff;
+  --code-bg: #0f172a;
+  --shadow: rgba(0,0,0,0.4);
 }
 
-nav a {
+/* =========================
+   Layout
+========================= */
 
-    color: var(--link);
-
-    text-decoration: none;
-
-    flex-shrink: 0;
+.container {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-nav a:hover {
-
-    color: var(--link-hover);
+main {
+  padding: 40px 0;
 }
 
-.hero {
+/* =========================
+   Header / Nav
+========================= */
 
-    display: flex;
-
-    align-items: center;
-
-    gap: 2rem;
-
-    margin-bottom: 4rem;
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
 }
 
-.avatar {
-
-    width: 140px;
-
-    height: 140px;
-
-    border-radius: 50%;
-
-    object-fit: cover;
-
-    flex-shrink: 0;
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 14px 0;
 }
 
-.hero-content h1 {
-
-    margin-top: 0;
-
-    margin-bottom: 0.5rem;
-
-    font-size: 2.5rem;
-
-    line-height: 1.1;
+.site-nav a {
+  text-decoration: none;
+  color: var(--muted);
+  font-weight: 500;
+  font-size: 14px;
+  transition: color 0.2s ease;
 }
 
-.subtitle {
-
-    color: var(--muted);
-
-    margin-bottom: 1rem;
+.site-nav a:hover {
+  color: var(--link);
 }
 
-h1,
-h2,
-h3 {
-
-    line-height: 1.2;
-
-    font-weight: 600;
+.site-nav a.active {
+  color: var(--link);
 }
 
-h1 {
-    margin-top: 0;
+/* =========================
+   Typography
+========================= */
+
+h1, h2, h3, h4 {
+  line-height: 1.25;
+  margin-top: 1.4em;
+  margin-bottom: 0.6em;
+  color: var(--text);
 }
+
+h1 { font-size: 2rem; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.2rem; }
+
+p {
+  margin: 0 0 1em;
+  color: var(--text);
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   Focus (accessibility)
+========================= */
+
+a:focus,
+button:focus {
+  outline: 2px solid var(--link);
+  outline-offset: 2px;
+}
+
+/* =========================
+   Lists
+========================= */
+
+ul, ol {
+  padding-left: 1.4em;
+}
+
+/* =========================
+   Post list
+========================= */
 
 .post-list {
-
-    list-style: none;
-
-    padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
 }
 
-.post-list li {
-
-    margin-bottom: 1.5rem;
-
-    padding-bottom: 1rem;
-
-    border-bottom: 1px solid var(--border);
+.post-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px 18px;
+  box-shadow: 0 6px 18px var(--shadow);
+  transition: transform 0.15s ease;
 }
 
-.post-date {
-
-    color: var(--muted);
-
-    font-size: 0.9rem;
+.post-card:hover {
+  transform: translateY(-2px);
 }
+
+.post-meta {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* =========================
+   Article 
+========================= */
+
+.article-header {
+  margin-bottom: 24px;
+}
+
+.article-content {
+  margin-top: 20px;
+}
+
+.article-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  gap: 20px;
+}
+
+.article-nav a {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.article-nav a:hover {
+  color: var(--link);
+}
+
+/* =========================
+   Tags 
+========================= */
 
 .tags {
-
-    margin-bottom: 2rem;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 10px;
 }
 
 .tag {
-
-    display: inline-block;
-
-    margin-right: 0.5rem;
-
-    color: var(--link);
-
-    font-size: 0.9rem;
+  font-size: 12px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--muted);
 }
 
-article img {
-
-    max-width: 100%;
-
-    height: auto;
+.tag:hover {
+  color: var(--link);
+  border-color: var(--link);
 }
 
-footer {
-
-    margin-top: 5rem;
-
-    padding-top: 2rem;
-
-    border-top: 1px solid var(--border);
-
-    color: var(--muted);
-
-    font-size: 0.9rem;
-}
-
-blockquote {
-
-    border-left: 3px solid var(--link);
-
-    padding-left: 1rem;
-
-    margin-left: 0;
-
-    color: #cfcfcf;
-}
+/* =========================
+   Code
+========================= */
 
 code {
-
-    background: #232323;
-
-    padding: 0.15rem 0.35rem;
-
-    border-radius: 4px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.9em;
+  background: var(--code-bg);
+  padding: 2px 6px;
+  border-radius: 6px;
 }
 
 pre {
-
-    overflow-x: auto;
-
-    background: #232323;
-
-    padding: 1rem;
-
-    border-radius: 6px;
+  background: #0a0f1c;
+  color: #e5e7eb;
+  padding: 16px;
+  border-radius: 10px;
+  overflow-x: auto;
 }
 
-pre code {
-    background: none;
+html[data-theme="dark"] pre {
+  background: #020617;
 }
 
-@media (max-width: 700px) {
+/* =========================
+   Buttons
+========================= */
 
-    .hero {
-
-        flex-direction: column;
-
-        align-items: flex-start;
-    }
-
-    .avatar {
-
-        width: 110px;
-
-        height: 110px;
-    }
-
-    .hero-content h1 {
-
-        font-size: 2rem;
-    }
+.button {
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: var(--link);
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
 }
 
-.post-meta{
+/* =========================
+   Footer
+========================= */
 
-    color:#9b9b9b;
-
-    margin-bottom:2rem;
-
-    font-size:.95rem;
+footer {
+  border-top: 1px solid var(--border);
+  margin-top: 60px;
+  padding: 24px 0;
+  font-size: 13px;
+  color: var(--muted);
+  background: var(--bg);
 }
 
-/* Progress bar */
+/* =========================
+   Theme toggle
+========================= */
 
-#reading-progress {
+.theme-toggle {
+  margin-left: auto;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 6px 10px;
+  cursor: pointer;
+  color: var(--text);
+  transition: all 0.2s ease;
+}
 
-    position: fixed;
+.theme-toggle:hover {
+  border-color: var(--link);
+  transform: translateY(-1px);
+}
 
-    top: 0;
+/* =========================
+   Responsive
+========================= */
 
-    left: 0;
+@media (max-width: 600px) {
+  body {
+    font-size: 15px;
+  }
 
-    width: 0;
+  .site-nav {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
 
-    height: 3px;
+  main {
+    padding: 24px 0;
+  }
 
-    background: #c47a3a;
+  .article-nav {
+    flex-direction: column;
+  }
+}
 
-    z-index: 9999;
+/* =========================
+   Smart Progress Bar
+========================= */
 
-    transition: width .1s linear;
+#progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--link), #8b93ff);
+  z-index: 9999;
+
+  /* smooth feel */
+  transition: width 0.08s linear;
 }

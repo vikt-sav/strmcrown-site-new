@@ -1,66 +1,70 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>
-        {{ if .IsHome }}
-            {{ .Site.Title }}
-        {{ else }}
-            {{ .Title }} | {{ .Site.Title }}
-        {{ end }}
-    </title>
-
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="icon" href="/favic1.jpg">
-    <script defer src="https://cloud.umami.is/script.js" data-website-id="9e39dd1c-91fa-410a-aa1f-a16b5bf6f7f2"></script>
-</head>
-
-<script>
-
-window.addEventListener("scroll", function () {
-
-    const pageHeight =
-        document.documentElement.scrollHeight -
-        window.innerHeight;
-
-    const progress =
-        window.scrollY / pageHeight;
-
-    document
-        .getElementById("reading-progress")
-        .style.width = (progress * 100) + "%";
-
-});
-
-</script>
+{{ partial "head.html" . }}
 
 <body>
-<div id="reading-progress"></div>
-<header>
 
-    <nav>
+<!-- SMART PROGRESS BAR -->
+<div id="progress-bar"></div>
 
-        {{ range .Site.Menus.main }}
-            <a href="{{ .URL }}">{{ .Name }}</a>
-        {{ end }}
+{{ partial "header.html" . }}
 
-    </nav>
+<main class="container">
 
-</header>
+  {{ block "main" . }}{{ end }}
 
-<main>
-    {{ block "main" . }}{{ end }}
 </main>
 
-<footer>
+{{ partial "footer.html" . }}
 
-    <p>
-        © {{ now.Year }} strmcrown
-    </p>
+<script src="/js/theme.js"></script>
 
-</footer>
+<script>
+// =========================
+// SMART PROGRESS BAR
+// =========================
+
+(function () {
+  const bar = document.getElementById("progress-bar");
+  if (!bar) return;
+
+  function getScrollProgress() {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    return (scrollTop / docHeight) * 100;
+  }
+
+  function getReadingProgress() {
+    const article = document.querySelector(".article-content");
+    if (!article) return null;
+
+    const rect = article.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+
+    const total = article.offsetHeight;
+    const visible = windowHeight - rect.top;
+
+    const progress = Math.min(Math.max(visible / total, 0), 1);
+    return progress * 100;
+  }
+
+  function update() {
+    const reading = getReadingProgress();
+
+    if (reading !== null) {
+      bar.style.width = reading + "%";
+    } else {
+      bar.style.width = getScrollProgress() + "%";
+    }
+  }
+
+  window.addEventListener("scroll", update, { passive: true });
+  window.addEventListener("resize", update);
+
+  update();
+})();
+</script>
 
 </body>
 </html>
