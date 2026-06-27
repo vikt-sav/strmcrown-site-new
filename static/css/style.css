@@ -397,3 +397,67 @@ a:hover {
   line-height: 1.6;
   margin: 0;
 }
+
+/* ========================
+   Reading — Two Columns
+======================== */
+
+.reading-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  margin-top: 40px;
+}
+
+.reading-column h2 {
+  margin-bottom: 24px;
+  font-size: 1.6rem;
+  text-align: center;
+  color: var(--text);
+}
+
+.book-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 20px;
+  box-shadow: 0 6px 20px var(--shadow);
+  transition: all 0.25s ease;
+}
+
+.book-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px var(--shadow);
+}
+
+.book-header h3 {
+  margin: 0 0 6px 0;
+  font-size: 1.22rem;
+}
+
+.book-author {
+  margin: 0 0 16px 0;
+  color: var(--muted);
+  font-style: italic;
+}
+
+.book-rating {
+  font-size: 1.4rem;
+  letter-spacing: 3px;
+  margin-bottom: 14px;
+  color: #f4b400;
+}
+
+.book-review {
+  line-height: 1.65;
+  color: var(--text);
+}
+
+/* Адаптив */
+@media (max-width: 900px) {
+  .reading-columns {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
