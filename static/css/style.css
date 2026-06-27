@@ -153,11 +153,9 @@ a:hover {
    Hero — ИСПРАВЛЕНО
 ========================= */
 
-.hero {
-  text-align: center;
-  padding: 80px 20px 40px;
-  margin-bottom: 40px;
-}
+/* =========================
+   Hero Avatar — с тенью и свечением
+========================= */
 
 .hero-image,
 .avatar {
@@ -168,22 +166,35 @@ a:hover {
   display: block;
   margin: 0 auto 24px;
   border: 1px solid var(--border);
-  box-shadow: 0 10px 40px var(--shadow);
+  
+  /* Основная тень */
+  box-shadow: 0 10px 40px var(--shadow),
+              0 0 0 6px rgba(255,255,255,0.08);
+  
+  transition: all 0.4s ease;
 }
 
-.hero-text {
-  max-width: 620px;
-  margin: 0 auto;
+/* Свечение в светлой теме */
+html:not([data-theme="dark"]) .hero-image,
+html:not([data-theme="dark"]) .avatar {
+  box-shadow: 0 15px 45px rgba(196, 122, 58, 0.18),
+              0 0 0 6px rgba(255,255,255,0.1);
 }
 
-.hero h1 {
-  margin: 0 0 12px 0;
+/* Красивое свечение в тёмной теме */
+html[data-theme="dark"] .hero-image,
+html[data-theme="dark"] .avatar {
+  box-shadow: 0 15px 50px rgba(139, 147, 255, 0.25),
+              0 0 0 8px rgba(139, 147, 255, 0.08),
+              inset 0 0 20px rgba(255,255,255,0.03);
 }
 
-.hero-subtitle {
-  color: var(--muted);
-  font-size: 1.1rem;
-  margin-bottom: 20px;
+/* Hover эффект */
+.hero-image:hover,
+.avatar:hover {
+  transform: scale(1.04) rotate(2deg);
+  box-shadow: 0 20px 60px var(--shadow),
+              0 0 30px rgba(139, 147, 255, 0.4);
 }
 
 /* =========================
@@ -329,4 +340,31 @@ button:focus {
   background: linear-gradient(90deg, var(--link), #8b93ff);
   z-index: 9999;
   transition: width 0.08s linear;
+}
+
+/* Активный пункт меню с лёгким свечением */
+.site-nav a.active {
+  color: var(--link);
+  position: relative;
+  font-weight: 600;
+}
+
+/* Лёгкое свечение + подчёркивание */
+.site-nav a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--link);
+  box-shadow: 0 0 8px var(--link),
+              0 0 16px rgba(139, 147, 255, 0.5);
+  border-radius: 2px;
+}
+
+/* Hover эффект для остальных пунктов */
+.site-nav a:hover:not(.active) {
+  color: var(--link);
+  opacity: 0.9;
 }
