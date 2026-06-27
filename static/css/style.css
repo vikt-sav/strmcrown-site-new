@@ -64,7 +64,7 @@ main {
 }
 
 /* =========================
-   Header / Nav
+   Header / Nav — ИСПРАВЛЕНО
 ========================= */
 
 .site-header {
@@ -72,11 +72,19 @@ main {
   background: var(--bg);
 }
 
+.site-header .container {
+  display: flex;
+  justify-content: center;
+}
+
 .site-nav {
   display: flex;
   align-items: center;
-  gap: 18px;
-  padding: 14px 0;
+  gap: 24px;
+  padding: 16px 0;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
 }
 
 .site-nav a {
@@ -87,12 +95,29 @@ main {
   transition: color 0.2s ease;
 }
 
-.site-nav a:hover {
+.site-nav a:hover,
+.site-nav a.active {
   color: var(--link);
 }
 
-.site-nav a.active {
-  color: var(--link);
+/* =========================
+   Theme toggle
+========================= */
+
+.theme-toggle {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 6px 10px;
+  cursor: pointer;
+  color: var(--text);
+  transition: all 0.2s ease;
+  margin-left: 8px;
+}
+
+.theme-toggle:hover {
+  border-color: var(--link);
+  transform: translateY(-1px);
 }
 
 /* =========================
@@ -106,9 +131,9 @@ h1, h2, h3, h4 {
   color: var(--text);
 }
 
-h1 { font-size: 2rem; }
-h2 { font-size: 1.5rem; }
-h3 { font-size: 1.2rem; }
+h1 { font-size: 2.4rem; }
+h2 { font-size: 1.75rem; }
+h3 { font-size: 1.35rem; }
 
 p {
   margin: 0 0 1em;
@@ -125,21 +150,58 @@ a:hover {
 }
 
 /* =========================
-   Focus (accessibility)
+   Hero — ИСПРАВЛЕНО
 ========================= */
 
-a:focus,
-button:focus {
-  outline: 2px solid var(--link);
-  outline-offset: 2px;
+.hero {
+  text-align: center;
+  padding: 80px 20px 40px;
+  margin-bottom: 40px;
+}
+
+.hero-image,
+.avatar {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 20px;
+  display: block;
+  margin: 0 auto 24px;
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 40px var(--shadow);
+}
+
+.hero-text {
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  margin: 0 0 12px 0;
+}
+
+.hero-subtitle {
+  color: var(--muted);
+  font-size: 1.1rem;
+  margin-bottom: 20px;
 }
 
 /* =========================
-   Lists
+   Footer — ИСПРАВЛЕНО
 ========================= */
 
-ul, ol {
-  padding-left: 1.4em;
+.site-footer {
+  text-align: center;
+  border-top: 1px solid var(--border);
+  margin-top: 60px;
+  padding: 32px 20px 24px;
+  font-size: 13px;
+  color: var(--muted);
+  background: var(--bg);
+}
+
+.site-footer p {
+  margin: 0;
 }
 
 /* =========================
@@ -150,24 +212,28 @@ ul, ol {
   display: flex;
   flex-direction: column;
   gap: 14px;
-}
-
-.post-card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 16px 18px;
-  box-shadow: 0 6px 18px var(--shadow);
-  transition: transform 0.15s ease;
-}
-
-.post-card:hover {
-  transform: translateY(-2px);
+  list-style: none;
+  padding: 0;
 }
 
 .post-meta {
   font-size: 13px;
   color: var(--muted);
+  margin-top: 4px;
+}
+
+.tag {
+  font-size: 12px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  margin-right: 6px;
+}
+
+.tag:hover {
+  color: var(--link);
+  border-color: var(--link);
 }
 
 /* =========================
@@ -185,41 +251,9 @@ ul, ol {
 .article-nav {
   display: flex;
   justify-content: space-between;
-  margin-top: 40px;
+  margin-top: 60px;
   gap: 20px;
-}
-
-.article-nav a {
-  font-size: 14px;
-  color: var(--muted);
-}
-
-.article-nav a:hover {
-  color: var(--link);
-}
-
-/* =========================
-   Tags 
-========================= */
-
-.tags {
-  display: flex;
-  gap: 8px;
   flex-wrap: wrap;
-  margin-top: 10px;
-}
-
-.tag {
-  font-size: 12px;
-  padding: 3px 8px;
-  border-radius: 999px;
-  border: 1px solid var(--border);
-  color: var(--muted);
-}
-
-.tag:hover {
-  color: var(--link);
-  border-color: var(--link);
 }
 
 /* =========================
@@ -247,52 +281,13 @@ html[data-theme="dark"] pre {
 }
 
 /* =========================
-   Buttons
+   Focus
 ========================= */
 
-.button {
-  display: inline-block;
-  padding: 10px 14px;
-  border-radius: 8px;
-  background: var(--link);
-  color: white;
-  font-size: 14px;
-  font-weight: 500;
-  border: none;
-  cursor: pointer;
-}
-
-/* =========================
-   Footer
-========================= */
-
-footer {
-  border-top: 1px solid var(--border);
-  margin-top: 60px;
-  padding: 24px 0;
-  font-size: 13px;
-  color: var(--muted);
-  background: var(--bg);
-}
-
-/* =========================
-   Theme toggle
-========================= */
-
-.theme-toggle {
-  margin-left: auto;
-  background: none;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 6px 10px;
-  cursor: pointer;
-  color: var(--text);
-  transition: all 0.2s ease;
-}
-
-.theme-toggle:hover {
-  border-color: var(--link);
-  transform: translateY(-1px);
+a:focus,
+button:focus {
+  outline: 2px solid var(--link);
+  outline-offset: 2px;
 }
 
 /* =========================
@@ -305,16 +300,19 @@ footer {
   }
 
   .site-nav {
-    flex-wrap: wrap;
-    gap: 12px;
+    gap: 16px;
   }
 
   main {
     padding: 24px 0;
   }
 
-  .article-nav {
-    flex-direction: column;
+  .hero {
+    padding: 60px 20px 30px;
+  }
+
+  h1 {
+    font-size: 2rem;
   }
 }
 
@@ -330,67 +328,5 @@ footer {
   width: 0%;
   background: linear-gradient(90deg, var(--link), #8b93ff);
   z-index: 9999;
-
-  /* smooth feel */
   transition: width 0.08s linear;
-}
-
-/* =========================
-   HEADER FIX
-========================= */
-
-.site-header {
-  border-bottom: 1px solid var(--border);
-  background: var(--bg);
-}
-
-.site-nav {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  padding: 14px 0;
-}
-
-.site-nav a {
-  font-size: 14px;
-  color: var(--muted);
-  text-decoration: none;
-}
-
-.site-nav a:hover {
-  color: var(--link);
-}
-
-.site-nav a.active {
-  color: var(--link);
-}
-
-/* =========================
-   HERO (FIX FOR YOUR SCREEN)
-========================= */
-
-.hero {
-  text-align: center;
-  padding: 60px 20px 20px;
-}
-
-.hero-image {
-  width: 180px;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 16px;
-  display: block;
-  margin: 0 auto 20px;
-
-  border: 1px solid var(--border);
-  box-shadow: 0 10px 30px var(--shadow);
-}
-
-.hero h1 {
-  margin: 0 0 10px;
-}
-
-.hero-subtitle {
-  color: var(--muted);
-  margin-bottom: 20px;
 }

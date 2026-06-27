@@ -1,103 +1,29 @@
 {{ define "main" }}
 
-<section class="hero">
-
-<img
-class="avatar"
-src="{{ .Site.Params.avatar }}"
-alt="Viktor Savostyanov">
-
-<div class="hero-text">
-
-<h1>
-
-Виктор Савостьянов
-
-</h1>
-
-<p class="hero-subtitle">
-
-Development · AI · Data Science · Open Source
-
-</p>
-
-<p>
-
-Исследователь и разработчик, интересующийся искусственным интеллектом,
-машинным обучением, NLP, локальными LLM и разработкой ПО.
-
-</p>
-
-</div>
-
-</section>
-
 {{ if .Content }}
-
 <section class="homepage-content">
-
-{{ .Content }}
-
+  {{ .Content }}
 </section>
-
 {{ end }}
 
 <section>
-
-<h2>
-
-Последние записи
-
-</h2>
-
-<ul class="post-list">
-
-{{ range first 10 (where .Site.RegularPages "Section" "ne" "") }}
-
-<li>
-
-<a href="{{ .RelPermalink }}">
-
-{{ .Title }}
-
-</a>
-
-<div class="post-meta">
-
-{{ if not .Date.IsZero }}
-
-{{ .Date.Format "02.01.2006" }}
-
-·
-
-{{ end }}
-
-{{ .ReadingTime }} мин чтения
-
-{{ with .Params.tags }}
-
-·
-
-{{ range first 3 . }}
-
-<span class="tag">
-
-{{ . }}
-
-</span>
-
-{{ end }}
-
-{{ end }}
-
-</div>
-
-</li>
-
-{{ end }}
-
-</ul>
-
+  <h2>Последние записи</h2>
+  <ul class="post-list">
+    {{ range first 10 (where .Site.RegularPages "Section" "ne" "") }}
+    <li>
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      <div class="post-meta">
+        {{ if not .Date.IsZero }}
+          {{ .Date.Format "02.01.2006" }} ·
+        {{ end }}
+        {{ .ReadingTime }} мин чтения
+        {{ with .Params.tags }}
+          · {{ range first 3 . }}<span class="tag">{{ . }}</span>{{ end }}
+        {{ end }}
+      </div>
+    </li>
+    {{ end }}
+  </ul>
 </section>
 
 {{ end }}
