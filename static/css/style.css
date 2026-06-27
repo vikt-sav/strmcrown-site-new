@@ -346,19 +346,3 @@ a:hover {
   .hero-image, .avatar { width: 160px; height: 160px; }
   h1 { font-size: 2rem; }
 }
-
-/* Force Menu Fix */
-.site-nav {
-  display: flex !important;
-  align-items: center;
-  gap: 24px;
-  padding: 16px 0;
-  flex-wrap: wrap;
-  justify-content: center;
-  width: 100%;
-  visibility: visible;
-}
-
-.site-header {
-  border-bottom: 1px solid var(--border) !important;
-}
