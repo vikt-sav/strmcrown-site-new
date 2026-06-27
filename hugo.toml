@@ -84,3 +84,6 @@ weight = 6
 name = "О сайте"
 url = "/about/"
 weight = 7
+
+[markup.goldmark.renderer]
+unsafe = true

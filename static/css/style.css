@@ -399,7 +399,34 @@ a:hover {
 }
 
 /* ========================
-   Reading — Two Columns
+   Последние обновления
+======================== */
+
+.post-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.post-meta {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 6px;
+}
+
+.section-tag {
+  font-size: 12px;
+  padding: 2px 9px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  margin-left: 10px;
+}
+
+/* ========================
+   Чтение — Две колонки
 ======================== */
 
 .reading-columns {
@@ -410,30 +437,29 @@ a:hover {
 }
 
 .reading-column h2 {
-  margin-bottom: 24px;
-  font-size: 1.6rem;
+  margin-bottom: 28px;
+  font-size: 1.65rem;
   text-align: center;
-  color: var(--text);
 }
 
 .book-card {
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: 16px;
-  padding: 24px;
-  margin-bottom: 20px;
-  box-shadow: 0 6px 20px var(--shadow);
+  padding: 26px;
+  margin-bottom: 22px;
+  box-shadow: 0 8px 25px var(--shadow);
   transition: all 0.25s ease;
 }
 
 .book-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 15px 35px var(--shadow);
+  transform: translateY(-5px);
+  box-shadow: 0 18px 40px var(--shadow);
 }
 
 .book-header h3 {
-  margin: 0 0 6px 0;
-  font-size: 1.22rem;
+  margin: 0 0 8px 0;
+  font-size: 1.25rem;
 }
 
 .book-author {
@@ -443,15 +469,14 @@ a:hover {
 }
 
 .book-rating {
-  font-size: 1.4rem;
-  letter-spacing: 3px;
-  margin-bottom: 14px;
+  font-size: 1.45rem;
+  letter-spacing: 4px;
+  margin-bottom: 16px;
   color: #f4b400;
 }
 
 .book-review {
   line-height: 1.65;
-  color: var(--text);
 }
 
 /* Адаптив */
