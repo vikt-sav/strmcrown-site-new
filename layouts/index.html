@@ -1,14 +1,5 @@
 {{ define "main" }}
 
-<section class="hero">
-  <img class="avatar" src="{{ .Site.Params.avatar }}" alt="Виктор Савостьянов">
-  <div class="hero-text">
-    <h1>Виктор Савостьянов</h1>
-    <p class="hero-subtitle">Development · AI · Data Science · Open Source</p>
-    <p>Исследователь и разработчик, интересующийся искусственным интеллектом, машинным обучением, NLP, локальными LLM и разработкой ПО.</p>
-  </div>
-</section>
-
 {{ if .Content }}
 <section class="homepage-content">
   {{ .Content }}
