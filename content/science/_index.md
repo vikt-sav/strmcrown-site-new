@@ -3,6 +3,8 @@ title: "Наука"
 description: "Научные публикации и исследования"
 ---
 
+# Наука
+
 Мои научные публикации и исследовательские проекты.
 
 <div class="resources-grid">
@@ -20,9 +22,11 @@ description: "Научные публикации и исследования"
       <strong>УДК:</strong> 81’322.4:81’33 | <strong>DOI:</strong> 10.55959/MSU2074-6636-22-2026-19-2-131-156
     </p>
     
-    <a href="#" class="resource-link" style="margin-top: 16px; opacity: 0.6; cursor: default;">
-      Читать статью →
-    </a>
+    <div style="margin-top: 20px;">
+      <a href="#" class="resource-link" style="opacity: 0.65; cursor: default; pointer-events: none;">
+        Читать статью →
+      </a>
+    </div>
   </div>
 
 </div>
