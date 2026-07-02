@@ -21,12 +21,4 @@ description: "Научные публикации и исследования"
     <p style="margin: 12px 0 0 0; font-size: 0.88rem; color: var(--muted);">
       <strong>УДК:</strong> 81’322.4:81’33 | <strong>DOI:</strong> 10.55959/MSU2074-6636-22-2026-19-2-131-156
     </p>
-    
-    <div style="margin-top: 20px;">
-      <a href="#" class="resource-link" style="opacity: 0.65; cursor: default; pointer-events: none;">
-        Читать статью →
-      </a>
-    </div>
-  </div>
-
 </div>
