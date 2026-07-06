@@ -47,7 +47,7 @@ date: 2026-07-06
       <p class="book-author">ИИ-ассистент</p>
     </div>
     <p class="book-review">
-      Norbert AI -- готовая архитектура для создания интеллектуальных ассистентов.
+      Norbert AI -- готовая архитектура для создания интеллектуальных ассистентов. Семантический поиск, граф, RAG, веб-поиск и поиск по научным базам, аннотирование и аналитика через LLM.
     </p>
     <a href="https://github.com/vikt-sav/norbert-ai" target="_blank" class="resource-link">GitHub →</a>
   </div>
