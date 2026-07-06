@@ -1,67 +1,28 @@
 {{ define "main" }}
 
 <header class="section-header">
-
-<h1>
-
-{{ .Title }}
-
-</h1>
-
-{{ if .Content }}
-
-<div class="section-description">
-
-{{ .Content }}
-
-</div>
-
-{{ end }}
-
+  <h1>{{ .Title }}</h1>
+  {{ if .Content }}
+  <div class="section-description">
+    {{ .Content }}
+  </div>
+  {{ end }}
 </header>
 
 {{ if gt (len .Pages) 0 }}
-
 <ul class="post-list">
-
-{{ range .Pages.ByDate.Reverse }}
-
-<li>
-
-<a href="{{ .RelPermalink }}">
-
-{{ .Title }}
-
-</a>
-
-<div class="post-meta">
-
-{{ if not .Date.IsZero }}
-
-{{ .Date.Format "02.01.2006" }}
-
-·
-
-{{ end }}
-
-{{ .ReadingTime }} мин
-
-</div>
-
-</li>
-
-{{ end }}
-
+  {{ range .Pages.ByDate.Reverse }}
+  <li>
+    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    <div class="post-meta">
+      {{ if not .Date.IsZero }}
+        {{ .Date.Format "02.01.2006" }} ·
+      {{ end }}
+      {{ .ReadingTime }} мин
+    </div>
+  </li>
+  {{ end }}
 </ul>
-
-{{ else }}
-
-<p>
-
-Пока здесь нет публикаций.
-
-</p>
-
 {{ end }}
 
 {{ end }}
