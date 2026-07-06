@@ -9,7 +9,7 @@
 <section>
   <h2>Последние обновления</h2>
   <ul class="post-list">
-    {{ range first 10 (where .Site.RegularPages "Section" "ne" "") }}
+    {{ range first 12 (where .Site.RegularPages "Kind" "page") }}
     <li>
       <a href="{{ .RelPermalink }}">{{ .Title }}</a>
       <div class="post-meta">
