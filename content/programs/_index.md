@@ -39,3 +39,14 @@ description: "Мои открытые проекты и полезные инс�
     </p>
     <a href="https://github.com/vikt-sav/jpg-to-pdf-compiler" target="_blank" class="resource-link">GitHub →</a>
   </div>
+
+  <div class="resource-card">
+    <div class="book-header">
+      <h3>Norbert AI</h3>
+      <p class="book-author">AI Assistant</p>
+    </div>
+    <p class="book-review">
+      Norbert AI — готовая архитектура для создания интеллектуальных ассистентов.
+    </p>
+    <a href="https://github.com/vikt-sav/norbert-ai" target="_blank" class="resource-link">GitHub →</a>
+  </div>
