@@ -1,5 +1,4 @@
-+++
-draft = false
-title = 'Thoughts'
+---
+title: "Мысли"
 date: 2026-07-06
-+++
+---
