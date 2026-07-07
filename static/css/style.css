@@ -347,31 +347,40 @@ a:hover {
   h1 { font-size: 2rem; }
 }
 
-.skills-section {
+/* Навыки и Языки */
+.two-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
   margin-top: 50px;
 }
 
-.skills-section h2 {
-  margin-bottom: 22px;
-  font-size: 1.7rem;
-}
-
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 16px 40px;
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
   font-size: 1.08rem;
 }
 
-.skills-grid div {
+.skills-list div {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 6px 0;
+  gap: 14px;
+  padding: 4px 0;
 }
 
 .icon {
-  font-size: 1.4rem;
-  width: 28px;
-  display: inline-block;
+  font-size: 1.5rem;
+  width: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* SVG иконки */
+.svg-icon {
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
 }
