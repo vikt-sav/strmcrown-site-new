@@ -346,3 +346,32 @@ a:hover {
   .hero-image, .avatar { width: 160px; height: 160px; }
   h1 { font-size: 2rem; }
 }
+
+.skills-section {
+  margin-top: 50px;
+}
+
+.skills-section h2 {
+  margin-bottom: 22px;
+  font-size: 1.7rem;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px 40px;
+  font-size: 1.08rem;
+}
+
+.skills-grid div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 6px 0;
+}
+
+.icon {
+  font-size: 1.4rem;
+  width: 28px;
+  display: inline-block;
+}
