@@ -22,8 +22,8 @@ title: "О сайте"
 
 ## Ссылки
 
-GitHub: https://github.com/vikt-sav
+**Telegram**: [t.me/strmcrown](https://t.me/strmcrown)
 
-Telegram: @strmcrown
+**GitHub**: [github.com/vikt-sav](https://github.com/vikt-sav)
 
-Email: victsav@gmail.com
+**Email**: victsav@gmail.com

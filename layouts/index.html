@@ -6,28 +6,31 @@
 </section>
 {{ end }}
 
-<!-- Навыки -->
-<section class="skills-section">
-  <h2>Навыки</h2>
-  <div class="skills-grid">
-    <div><span class="icon">🐍</span> Python</div>
-    <div><span class="icon">🗄️</span> SQL</div>
-    <div><span class="icon">🤖</span> Machine Learning</div>
-    <div><span class="icon">🐳</span> Docker</div>
-    <div><span class="icon">🧠</span> Agentic Development</div>
-    <div><span class="icon">📚</span> RAG</div>
-    <div><span class="icon">🔄</span> ETL Pipelines</div>
+<!-- Навыки и Языки в две колонки -->
+<section class="two-columns">
+  <!-- Левая колонка — Навыки -->
+  <div>
+    <h2>Навыки</h2>
+    <div class="skills-list">
+      <div><span class="icon">{{ template "icon-python" . }}</span> Python</div>
+      <div><span class="icon">{{ template "icon-sql" . }}</span> SQL</div>
+      <div><span class="icon">{{ template "icon-ml" . }}</span> Machine Learning</div>
+      <div><span class="icon">{{ template "icon-docker" . }}</span> Docker</div>
+      <div><span class="icon">{{ template "icon-agent" . }}</span> Agentic Development</div>
+      <div><span class="icon">{{ template "icon-rag" . }}</span> RAG</div>
+      <div><span class="icon">{{ template "icon-etl" . }}</span> ETL Pipelines</div>
+    </div>
   </div>
-</section>
 
-<!-- Языки -->
-<section class="skills-section">
-  <h2>Языки</h2>
-  <div class="skills-grid">
-    <div><span class="icon">🇷🇺</span> Русский (родной)</div>
-    <div><span class="icon">🇬🇧</span> English (C2)</div>
-    <div><span class="icon">🇩🇪</span> Deutsch (B1)</div>
-    <div><span class="icon">🇫🇷</span> Français (B1)</div>
+  <!-- Правая колонка — Языки -->
+  <div>
+    <h2>Языки</h2>
+    <div class="skills-list">
+      <div><span class="icon">🇷🇺</span> Русский (родной)</div>
+      <div><span class="icon">🇬🇧</span> English (C2)</div>
+      <div><span class="icon">🇩🇪</span> Deutsch (B1)</div>
+      <div><span class="icon">🇫🇷</span> Français (B1)</div>
+    </div>
   </div>
 </section>
 
