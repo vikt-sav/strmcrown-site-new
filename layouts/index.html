@@ -6,21 +6,28 @@
 </section>
 {{ end }}
 
-<section>
-  <h2>Последние обновления</h2>
-  <ul class="post-list">
-    {{ range first 12 .Site.RegularPages }}
-    <li>
-      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-      <div class="post-meta">
-        {{ if not .Date.IsZero }}
-          {{ .Date.Format "02.01.2006" }} ·
-        {{ end }}
-        {{ .ReadingTime }} мин
-        <span class="section-tag">{{ .Section | title }}</span>
-      </div>
-    </li>
-    {{ end }}
+<!-- Навыки -->
+<section style="margin-top: 60px;">
+  <h2>Навыки</h2>
+  <ul style="columns: 2; column-gap: 40px; list-style: none; padding: 0; font-size: 1.05rem;">
+    <li>Python</li>
+    <li>SQL</li>
+    <li>Machine Learning</li>
+    <li>Docker</li>
+    <li>Agentic Development</li>
+    <li>RAG</li>
+    <li>ETL Pipelines</li>
+  </ul>
+</section>
+
+<!-- Языки -->
+<section style="margin-top: 50px;">
+  <h2>Языки</h2>
+  <ul style="columns: 2; column-gap: 40px; list-style: none; padding: 0; font-size: 1.05rem;">
+    <li>Русский (родной)</li>
+    <li>English (C2)</li>
+    <li>Deutsch (B1)</li>
+    <li>Français (B1)</li>
   </ul>
 </section>
 

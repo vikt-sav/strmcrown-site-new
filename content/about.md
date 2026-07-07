@@ -8,15 +8,15 @@ title: "О сайте"
 
 Основные интересы:
 
-- Artificial Intelligence
-- Machine Learning
-- NLP
-- Software Engineering
-- Open Source
-- AI Research
+/ Artificial Intelligence
+/ Machine Learning
+/ NLP
+/ Software Engineering
+/ Open Source
+/ AI Research
 
 ## Ссылки
 
 GitHub: https://github.com/vikt-sav
-
+Telegram: @strmcrown
 Email: victsav@gmail.com
