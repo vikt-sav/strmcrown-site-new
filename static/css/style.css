@@ -386,3 +386,57 @@ a:hover {
   display: flex;
   align-items: center;
 }
+
+/* =========================
+   Навыки и Языки
+========================= */
+
+.two-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  margin-top: 50px;
+}
+
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-size: 1.08rem;
+}
+
+.skills-list div {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+}
+
+.flag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  font-size: 1.45rem;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.15);
+  flex-shrink: 0;
+}
+
+/* Адаптив */
+@media (max-width: 900px) {
+  .two-columns {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+}
