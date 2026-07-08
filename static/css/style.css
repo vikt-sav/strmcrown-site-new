@@ -394,3 +394,27 @@ a:hover {
 }
 
 /* Если вы хотите чуть меньше – измените font-size: 18px или 16px */
+
+/* =========================
+   Флаги (исправленные)
+========================= */
+
+/* Обёртка для флага – круглая, 24×24 */
+.flag-wrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* Сам флаг – берём стили библиотеки, только уменьшаем размер */
+.flag-wrap .fi {
+  font-size: 20px;        /* размер флага внутри круга */
+  line-height: 1;
+  display: inline-block;   /* чтобы псевдоэлемент работал */
+}
