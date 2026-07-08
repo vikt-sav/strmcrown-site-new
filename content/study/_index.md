@@ -38,4 +38,14 @@ date: 2026-07-06
     <a href="https://start.practicum.yandex/courses/ai-basics-for-university-students?from=catalog" target="_blank" class="resource-link">Перейти к курсу →</a>
   </div>
 
+  <div class="resource-card">
+    <div class="book-header">
+      <h3>3Blue1Brown</h3>
+      <p class="book-author">YouTube-канал</p>
+    </div>
+    <p class="book-review">
+      Совершенно замечательный канал с короткими курсами по линейной алгебре, матанализу, нейросетям и другим фундаментальным темам. Одна из лучших визуализаций математики в мире.
+    </p>
+    <a href="https://www.youtube.com/@3blue1brown/courses" target="_blank" class="resource-link">Перейти на канал →</a>
+  </div>
 </div>
