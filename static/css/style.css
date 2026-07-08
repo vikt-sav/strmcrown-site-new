@@ -440,3 +440,48 @@ a:hover {
     gap: 50px;
   }
 }
+
+/* =========================
+   Иконки (Font Awesome + Flag Icons)
+========================= */
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  margin-right: 12px;
+  font-size: 20px;       /* размер иконок Font Awesome */
+  line-height: 1;
+  vertical-align: middle;
+  color: var(--text);    /* наследуем цвет текста */
+}
+
+/* Флаги: размер через font-size, т.к. они шрифтовые */
+.fi {
+  font-size: 24px !important;
+  line-height: 1 !important;
+  background: none !important;
+}
+
+/* Две колонки  */
+.two-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  margin-top: 50px;
+}
+
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  font-size: 1.08rem;
+}
+
+.skills-list div {
+  display: flex;
+  align-items: center;
+}
