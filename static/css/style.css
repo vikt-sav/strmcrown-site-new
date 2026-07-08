@@ -351,49 +351,50 @@ a:hover {
    Иконки (Simple Icons + Flag Icons)
 ========================= */
 
-/* Общие настройки для всех иконок */
+/* Общий контейнер иконки */
 .icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 24px;
   height: 24px;
-  font-size: 24px;          /* Размер для шрифтовых иконок */
+  font-size: 24px;
   line-height: 1;
-  vertical-align: middle;
   flex-shrink: 0;
-  margin-right: 10px;
+  margin-right: 12px;
+  vertical-align: middle;
 }
 
 /* Технологические иконки (Simple Icons) */
 .si {
-  font-size: 24px;          /* Явно задаём размер */
-  line-height: 1;
+  font-size: 24px !important;  /* переопределяем возможные стили библиотеки */
+  line-height: 1 !important;
 }
 
 /* Флаги (Flag Icons) */
 .fi {
-  font-size: 24px;
-  line-height: 1;
-  /* Флаги по умолчанию имеют соотношение 4:3, но мы принудительно задаём размер */
-  width: 24px;
-  height: 24px;
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-/* Если у флагов появляется фон, убираем его */
-.fi::before {
-  font-size: 24px !important;  /* Переопределяем размер, который может быть задан в библиотеке */
+  font-size: 24px !important;
   line-height: 1 !important;
-  vertical-align: middle;
+  /* у флагов может быть фон, убираем */
+  background: none !important;
 }
 
-/* Убираем дублирующие правила для .skills-list .icon, чтобы не конфликтовать */
-.skills-list .icon {
-  width: 24px;
-  height: 24px;
-  margin-right: 10px;
-  flex-shrink: 0;
+/* Убедимся, что список навыков использует grid-колонки */
+.two-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px; /* или 90px, как вам нравится */
+  margin-top: 50px;
+}
+
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  font-size: 1.08rem;
+}
+
+.skills-list div {
+  display: flex;
+  align-items: center;
 }
