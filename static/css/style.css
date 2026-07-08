@@ -485,3 +485,28 @@ a:hover {
   display: flex;
   align-items: center;
 }
+
+/* =========================
+   Флаги (уменьшенные и круглые)
+========================= */
+
+/* Уменьшаем размер флагов до 20px */
+.fi {
+  font-size: 20px !important;
+  line-height: 1 !important;
+}
+
+/* Делаем флаги круглыми */
+.icon.fi {
+  border-radius: 50%;
+  overflow: hidden;
+  /* Чтобы флаг не выходил за границы круга */
+  width: 24px;
+  height: 24px;
+  /* Для центрирования иконки внутри круга */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  /* Добавим лёгкую тень для красоты */
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
