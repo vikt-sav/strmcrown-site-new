@@ -348,42 +348,30 @@ a:hover {
 }
 
 /* =========================
-   Иконки (Simple Icons + Flag Icons)
+   Иконки (все SVG)
 ========================= */
-
-/* Общий контейнер иконки */
 .icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 24px;
   height: 24px;
-  font-size: 24px;
-  line-height: 1;
   flex-shrink: 0;
   margin-right: 12px;
   vertical-align: middle;
 }
 
-/* Технологические иконки (Simple Icons) */
-.si {
-  font-size: 24px !important;  /* переопределяем возможные стили библиотеки */
-  line-height: 1 !important;
+.icon svg {
+  width: 24px;
+  height: 24px;
+  display: block;
 }
 
-/* Флаги (Flag Icons) */
-.fi {
-  font-size: 24px !important;
-  line-height: 1 !important;
-  /* у флагов может быть фон, убираем */
-  background: none !important;
-}
-
-/* Убедимся, что список навыков использует grid-колонки */
+/* Две колонки */
 .two-columns {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 60px; /* или 90px, как вам нравится */
+  gap: 60px;
   margin-top: 50px;
 }
 

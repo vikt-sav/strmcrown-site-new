@@ -12,13 +12,13 @@
   <div>
     <h2>Навыки</h2>
     <div class="skills-list">
-      <div><span class="icon si si-python"></span> Python</div>
-      <div><span class="icon si si-sqlite"></span> SQL</div>
-      <div><span class="icon si si-tensorflow"></span> Machine Learning</div>
-      <div><span class="icon si si-docker"></span> Docker</div>
-      <div><span class="icon si si-openai"></span> Agentic Development</div>
-      <div><span class="icon si si-rag"></span> RAG</div>
-      <div><span class="icon si si-apacheairflow"></span> ETL Pipelines</div>
+      <div><span class="icon">{{ template "icon-python" . }}</span> Python</div>
+      <div><span class="icon">{{ template "icon-sql" . }}</span> SQL</div>
+      <div><span class="icon">{{ template "icon-ml" . }}</span> Machine Learning</div>
+      <div><span class="icon">{{ template "icon-docker" . }}</span> Docker</div>
+      <div><span class="icon">{{ template "icon-agent" . }}</span> Agentic Development</div>
+      <div><span class="icon">{{ template "icon-rag" . }}</span> RAG</div>
+      <div><span class="icon">{{ template "icon-etl" . }}</span> ETL Pipelines</div>
     </div>
   </div>
 
@@ -26,10 +26,10 @@
   <div>
     <h2>Языки</h2>
     <div class="skills-list">
-      <div><span class="icon fi fi-ru"></span> Русский (родной)</div>
-      <div><span class="icon fi fi-gb"></span> English (C2)</div>
-      <div><span class="icon fi fi-de"></span> Deutsch (B1)</div>
-      <div><span class="icon fi fi-fr"></span> Français (B1)</div>
+      <div><span class="icon">{{ template "flag-ru" . }}</span> Русский (родной)</div>
+      <div><span class="icon">{{ template "flag-gb" . }}</span> English (C2)</div>
+      <div><span class="icon">{{ template "flag-de" . }}</span> Deutsch (B1)</div>
+      <div><span class="icon">{{ template "flag-fr" . }}</span> Français (B1)</div>
     </div>
   </div>
 </section>
