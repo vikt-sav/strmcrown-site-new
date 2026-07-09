@@ -7,6 +7,15 @@
 {{ end }}
 
 <!-- Последнее обновление (включая обновления _index) -->
+{{ $ruNames := dict 
+  "science" "Наука"
+  "programs" "Программы"
+  "study" "Учёба"
+  "reading" "Чтение"
+  "contests" "Конкурсы"
+  "about" "О сайте"
+}}
+
 {{ $allPages := .Site.Pages }}
 {{ $pagesWithSection := where $allPages "Section" "!=" "" }}
 {{ $pagesNotHome := where $pagesWithSection "Kind" "!=" "home" }}
@@ -18,7 +27,7 @@
 
 {{ if $sorted }}
   {{ $latest := index $sorted 0 }}
-  {{ $sectionName := $latest.Section | humanize | title }}
+  {{ $sectionName := index $ruNames $latest.Section | default ($latest.Section | humanize | title) }}
   {{ $sectionURL := printf "/%s/" ($latest.Section | urlize) | relURL }}
   
   {{ $date := $latest.Lastmod }}
@@ -36,7 +45,7 @@
   <div class="last-update">
     <span>Последнее обновление: </span>
     <a href="{{ $sectionURL }}">{{ $sectionName }}</a>
-    <span> — {{ $dateRu }}</span>
+    <span> от {{ $dateRu }}</span>
   </div>
 {{ end }}
 
