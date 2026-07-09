@@ -418,3 +418,30 @@ a:hover {
   line-height: 1;
   display: inline-block;   /* чтобы псевдоэлемент работал */
 }
+
+/* =========================
+   Последнее обновление
+========================= */
+.last-update {
+  background: var(--code-bg);
+  padding: 12px 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  font-size: 0.95rem;
+  color: var(--muted);
+  border-left: 4px solid var(--link);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.last-update a {
+  color: var(--link);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.last-update a:hover {
+  text-decoration: underline;
+}

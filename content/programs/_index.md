@@ -51,3 +51,16 @@ date: 2026-07-06
     </p>
     <a href="https://github.com/vikt-sav/norbert-ai" target="_blank" class="resource-link">GitHub →</a>
   </div>
+
+  <div class="resource-card">
+    <div class="book-header">
+      <h3>Предсказание возраста пользователей по поведению в интернете</h3>
+      <p class="book-author">Машинное обучение • Multiclass Classification</p>
+    </div>
+    <p class="book-review">
+      Учебный проект по построению модели предсказания возрастной категории пользователя (0–4) на основе данных о поведении в интернете. 
+      Использованы линейные модели, feature engineering, анализ метрик и визуализация.
+      Цель — F1-macro ≥ 0.75.
+    </p>
+    <a href="https://github.com/vikt-sav/age-prediction-project" target="_blank" class="resource-link">GitHub →</a>
+  </div>

@@ -6,6 +6,31 @@
 </section>
 {{ end }}
 
+<!-- Последнее обновление -->
+{{ $pages := .Site.RegularPages }}
+{{ $last := first 1 $pages.ByLastmod.Reverse }}
+{{ if $last }}
+  {{ $page := index $last 0 }}
+  {{ $title := $page.Section | humanize | title }}
+  {{ $url := printf "/%s/" ($page.Section | urlize) | relURL }}
+  
+  <div class="last-update">
+    <span>Последнее обновление: </span>
+    <a href="{{ $url }}">{{ $title }}</a>
+    {{ if or $page.Lastmod $page.Date }}
+      {{ $date := $page.Lastmod | default $page.Date }}
+      {{ $day := $date.Format "02" }}
+      {{ $monthNum := $date.Format "1" | int }}
+      {{ $year := $date.Format "2006" }}
+      {{ $months := slice "января" "февраля" "марта" "апреля" "мая" "июня" "июля" "августа" "сентября" "октября" "ноября" "декабря" }}
+      {{ $monthName := index $months (sub $monthNum 1) }}
+      <span> — {{ $day }} {{ $monthName }} {{ $year }}</span>
+    {{ else }}
+      <span> — (обновлено недавно)</span>
+    {{ end }}
+  </div>
+{{ end }}
+
 <!-- Навыки и Языки в две колонки -->
 <section class="two-columns">
   <!-- Левая колонка — Навыки -->
@@ -22,16 +47,16 @@
     </div>
   </div>
 
-<!-- Правая колонка — Языки -->
-<div>
-  <h2>Языки</h2>
-  <div class="skills-list">
-    <div><span class="icon flag-wrap"><span class="fi fi-ru"></span></span> Русский (родной)</div>
-    <div><span class="icon flag-wrap"><span class="fi fi-gb"></span></span> English (C2)</div>
-    <div><span class="icon flag-wrap"><span class="fi fi-de"></span></span> Deutsch (B1)</div>
-    <div><span class="icon flag-wrap"><span class="fi fi-fr"></span></span> Français (B1)</div>
+  <!-- Правая колонка — Языки -->
+  <div>
+    <h2>Языки</h2>
+    <div class="skills-list">
+      <div><span class="icon flag-wrap"><span class="fi fi-ru"></span></span> Русский (родной)</div>
+      <div><span class="icon flag-wrap"><span class="fi fi-gb"></span></span> English (C2)</div>
+      <div><span class="icon flag-wrap"><span class="fi fi-de"></span></span> Deutsch (B1)</div>
+      <div><span class="icon flag-wrap"><span class="fi fi-fr"></span></span> Français (B1)</div>
+    </div>
   </div>
-</div>
 </section>
 
 {{ end }}
