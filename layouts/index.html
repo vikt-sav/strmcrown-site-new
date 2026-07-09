@@ -6,28 +6,36 @@
 </section>
 {{ end }}
 
-<!-- Последнее обновление -->
-{{ $pages := .Site.RegularPages }}
-{{ $last := first 1 $pages.ByLastmod.Reverse }}
-{{ if $last }}
-  {{ $page := index $last 0 }}
-  {{ $title := $page.Section | humanize | title }}
-  {{ $url := printf "/%s/" ($page.Section | urlize) | relURL }}
+<!-- Последнее обновление (любое изменение) -->
+{{ $allPages := .Site.RegularPages }}
+{{ $pagesWithSection := where $allPages "Section" "!=" "" }}
+{{ $sorted := sort $pagesWithSection "Lastmod" "desc" }}
+{{ if eq (len $sorted) 0 }}
+  {{ $sorted = sort $pagesWithSection "File.ModTime" "desc" }}
+{{ end }}
+{{ if $sorted }}
+  {{ $page := index $sorted 0 }}
+  {{ $sectionName := $page.Section | humanize | title }}
+  {{ $sectionURL := printf "/%s/" ($page.Section | urlize) | relURL }}
+  
+  <!-- Преобразуем дату Lastmod или File.ModTime -->
+  {{ $date := $page.Lastmod }}
+  {{ if not $date }}
+    {{ $date = $page.File.ModTime }}
+  {{ end }}
+  
+  <!-- Форматируем дату на русском -->
+  {{ $day := $date.Format "2" }}
+  {{ $monthNum := $date.Format "1" }}
+  {{ $year := $date.Format "2006" }}
+  {{ $monthNames := dict "1" "января" "2" "февраля" "3" "марта" "4" "апреля" "5" "мая" "6" "июня" "7" "июля" "8" "августа" "9" "сентября" "10" "октября" "11" "ноября" "12" "декабря" }}
+  {{ $month := index $monthNames $monthNum }}
+  {{ $dateRu := printf "%s %s %s" $day $month $year }}
   
   <div class="last-update">
     <span>Последнее обновление: </span>
-    <a href="{{ $url }}">{{ $title }}</a>
-    {{ if or $page.Lastmod $page.Date }}
-      {{ $date := $page.Lastmod | default $page.Date }}
-      {{ $day := $date.Format "02" }}
-      {{ $monthNum := $date.Format "1" | int }}
-      {{ $year := $date.Format "2006" }}
-      {{ $months := slice "января" "февраля" "марта" "апреля" "мая" "июня" "июля" "августа" "сентября" "октября" "ноября" "декабря" }}
-      {{ $monthName := index $months (sub $monthNum 1) }}
-      <span> — {{ $day }} {{ $monthName }} {{ $year }}</span>
-    {{ else }}
-      <span> — (обновлено недавно)</span>
-    {{ end }}
+    <a href="{{ $sectionURL }}">{{ $sectionName }}</a>
+    <span> — {{ $dateRu }}</span>
   </div>
 {{ end }}
 
