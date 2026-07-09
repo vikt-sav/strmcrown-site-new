@@ -62,5 +62,5 @@ date: 2026-07-06
       Использованы линейные модели, feature engineering, анализ метрик и визуализация.
       Цель — F1-macro ≥ 0.75.
     </p>
-    <a href="https://github.com/vikt-sav/age-prediction-project" target="_blank" class="resource-link">GitHub →</a>
+    <a href="https://github.com/vikt-sav/user-age-prediction-ml" target="_blank" class="resource-link">GitHub →</a>
   </div>
