@@ -6,25 +6,26 @@
 </section>
 {{ end }}
 
-<!-- Последнее обновление (любое изменение) -->
-{{ $allPages := .Site.RegularPages }}
+<!-- Последнее обновление (включая обновления _index) -->
+{{ $allPages := .Site.Pages }}
 {{ $pagesWithSection := where $allPages "Section" "!=" "" }}
-{{ $sorted := sort $pagesWithSection "Lastmod" "desc" }}
+{{ $pagesNotHome := where $pagesWithSection "Kind" "!=" "home" }}
+
+{{ $sorted := sort $pagesNotHome "Lastmod" "desc" }}
 {{ if eq (len $sorted) 0 }}
-  {{ $sorted = sort $pagesWithSection "File.ModTime" "desc" }}
+  {{ $sorted = sort $pagesNotHome "File.ModTime" "desc" }}
 {{ end }}
+
 {{ if $sorted }}
-  {{ $page := index $sorted 0 }}
-  {{ $sectionName := $page.Section | humanize | title }}
-  {{ $sectionURL := printf "/%s/" ($page.Section | urlize) | relURL }}
+  {{ $latest := index $sorted 0 }}
+  {{ $sectionName := $latest.Section | humanize | title }}
+  {{ $sectionURL := printf "/%s/" ($latest.Section | urlize) | relURL }}
   
-  <!-- Преобразуем дату Lastmod или File.ModTime -->
-  {{ $date := $page.Lastmod }}
+  {{ $date := $latest.Lastmod }}
   {{ if not $date }}
-    {{ $date = $page.File.ModTime }}
+    {{ $date = $latest.File.ModTime }}
   {{ end }}
   
-  <!-- Форматируем дату на русском -->
   {{ $day := $date.Format "2" }}
   {{ $monthNum := $date.Format "1" }}
   {{ $year := $date.Format "2006" }}
