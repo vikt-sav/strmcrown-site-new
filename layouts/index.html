@@ -20,8 +20,9 @@
 
 {{ if $sorted }}
   {{ $latest := index $sorted 0 }}
-  {{ $sectionName := index $ruNames $latest.Section | default ($latest.Section | humanize | title) }}
-  {{ $sectionURL := printf "/%s/" ($latest.Section | urlize) | relURL }}
+  {{ $sectionKey := $latest.Section }}
+  {{ $sectionName := index $ruNames $sectionKey | default ($sectionKey | humanize | title) }}
+  {{ $sectionURL := printf "/%s/" ($sectionKey | urlize) | relURL }}
 
   {{ $date := $latest.Lastmod }}
   {{ if not $date }}
