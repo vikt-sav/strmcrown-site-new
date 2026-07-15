@@ -20,7 +20,12 @@
 
 {{ if $sorted }}
   {{ $latest := index $sorted 0 }}
+  
   {{ $sectionKey := $latest.Section }}
+  {{ if not $sectionKey }}
+    {{ $sectionKey = $latest.File.Dir | path.Base }}
+  {{ end }}
+  
   {{ $sectionName := index $ruNames $sectionKey | default ($sectionKey | humanize | title) }}
   {{ $sectionURL := printf "/%s/" ($sectionKey | urlize) | relURL }}
 
