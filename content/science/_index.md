@@ -6,8 +6,6 @@ date: 2026-07-06
 
 Мои научные публикации и исследовательские проекты.
 
-<div class="resources-grid">
-
   <div class="resource-card">
     <div class="book-header">
       <h3>Межагентная оценка качества машинного перевода в предметных областях: сравнительный анализ Google Translate, Yandex Translate и DeepL</h3>
@@ -20,4 +18,8 @@ date: 2026-07-06
     <p style="margin: 12px 0 0 0; font-size: 0.88rem; color: var(--muted);">
       <strong>УДК:</strong> 81’322.4:81’33 | <strong>DOI:</strong> 10.55959/MSU2074-6636-22-2026-19-2-131-156
     </p>
-</div>
+    
+    <a href="https://elibrary.ru/item.asp?id=91725456" target="_blank" class="resource-link" style="margin-top: 16px;">
+      Читать статью →
+    </a>
+  </div>
