@@ -26,7 +26,11 @@
     {{ $sectionKey = $latest.File.Dir | path.Base }}
   {{ end }}
   
-  {{ $sectionName := index $ruNames $sectionKey | default ($sectionKey | humanize | title) }}
+  {{ $sectionName := index $ruNames $sectionKey }}
+  {{ if not $sectionName }}
+    {{ $sectionName = $sectionKey | humanize | title }}
+  {{ end }}
+  
   {{ $sectionURL := printf "/%s/" ($sectionKey | urlize) | relURL }}
 
   {{ $date := $latest.Lastmod }}
