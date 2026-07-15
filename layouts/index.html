@@ -6,7 +6,7 @@
 </section>
 {{ end }}
 
-<!-- Последнее обновление (включая обновления _index) -->
+<!-- Последнее обновление -->
 {{ $ruNames := dict 
   "science" "Наука"
   "programs" "Программы"
@@ -14,6 +14,7 @@
   "reading" "Чтение"
   "contests" "Конкурсы"
   "about" "О сайте"
+  "hacks-contests" "Конкурсы"
 }}
 
 {{ $allPages := .Site.Pages }}
@@ -27,8 +28,9 @@
 
 {{ if $sorted }}
   {{ $latest := index $sorted 0 }}
-  {{ $sectionName := index $ruNames $latest.Section | default ($latest.Section | humanize | title) }}
-  {{ $sectionURL := printf "/%s/" ($latest.Section | urlize) | relURL }}
+  {{ $sectionKey := $latest.Section }}
+  {{ $sectionName := index $ruNames $sectionKey | default ($sectionKey | humanize | title) }}
+  {{ $sectionURL := printf "/%s/" ($sectionKey | urlize) | relURL }}
   
   {{ $date := $latest.Lastmod }}
   {{ if not $date }}
@@ -51,7 +53,6 @@
 
 <!-- Навыки и Языки в две колонки -->
 <section class="two-columns">
-  <!-- Левая колонка — Навыки -->
   <div>
     <h2>Навыки</h2>
     <div class="skills-list">
@@ -65,7 +66,6 @@
     </div>
   </div>
 
-  <!-- Правая колонка — Языки -->
   <div>
     <h2>Языки</h2>
     <div class="skills-list">
