@@ -25,7 +25,7 @@
 
   {{ $date := $latest.Lastmod }}
   {{ if not $date }}
-    {{ $date = $latest.File.ModTime }}
+    {{ $date = now }}
   {{ end }}
 
   {{ $day := $date.Format "2" }}
