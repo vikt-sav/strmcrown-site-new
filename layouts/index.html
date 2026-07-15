@@ -6,45 +6,42 @@
 </section>
 {{ end }}
 
-<!-- Последнее обновление (автоматическое) -->
-{{ $ruNames := dict
+<!-- Последнее обновление (включая обновления _index) -->
+{{ $ruNames := dict 
   "science" "Наука"
   "programs" "Программы"
   "study" "Учёба"
   "reading" "Чтение"
-  "hacks-contests" "Конкурсы"
+  "contests" "Конкурсы"
   "about" "О сайте"
 }}
 
-{{ $sorted := sort .Site.RegularPages "Lastmod" "desc" }}
+{{ $allPages := .Site.Pages }}
+{{ $pagesWithSection := where $allPages "Section" "!=" "" }}
+{{ $pagesNotHome := where $pagesWithSection "Kind" "!=" "home" }}
+
+{{ $sorted := sort $pagesNotHome "Lastmod" "desc" }}
+{{ if eq (len $sorted) 0 }}
+  {{ $sorted = sort $pagesNotHome "File.ModTime" "desc" }}
+{{ end }}
 
 {{ if $sorted }}
   {{ $latest := index $sorted 0 }}
+  {{ $sectionName := index $ruNames $latest.Section | default ($latest.Section | humanize | title) }}
+  {{ $sectionURL := printf "/%s/" ($latest.Section | urlize) | relURL }}
   
-  {{ $sectionKey := $latest.Section }}
-  {{ if not $sectionKey }}
-    {{ $sectionKey = $latest.File.Dir | path.Base }}
-  {{ end }}
-  
-  {{ $sectionName := index $ruNames $sectionKey }}
-  {{ if not $sectionName }}
-    {{ $sectionName = $sectionKey | humanize | title }}
-  {{ end }}
-  
-  {{ $sectionURL := printf "/%s/" ($sectionKey | urlize) | relURL }}
-
   {{ $date := $latest.Lastmod }}
   {{ if not $date }}
-    {{ $date = now }}
+    {{ $date = $latest.File.ModTime }}
   {{ end }}
-
+  
   {{ $day := $date.Format "2" }}
   {{ $monthNum := $date.Format "1" }}
   {{ $year := $date.Format "2006" }}
   {{ $monthNames := dict "1" "января" "2" "февраля" "3" "марта" "4" "апреля" "5" "мая" "6" "июня" "7" "июля" "8" "августа" "9" "сентября" "10" "октября" "11" "ноября" "12" "декабря" }}
   {{ $month := index $monthNames $monthNum }}
   {{ $dateRu := printf "%s %s %s" $day $month $year }}
-
+  
   <div class="last-update">
     <span>Последнее обновление: </span>
     <a href="{{ $sectionURL }}">{{ $sectionName }}</a>
@@ -58,15 +55,16 @@
   <div>
     <h2>Навыки</h2>
     <div class="skills-list">
-      <div><span class="icon flag-wrap"><i class="fab fa-python"></i></span> Python</div>
-      <div><span class="icon flag-wrap"><i class="fas fa-database"></i></span> SQL</div>
-      <div><span class="icon flag-wrap"><i class="fas fa-brain"></i></span> Machine Learning</div>
-      <div><span class="icon flag-wrap"><i class="fab fa-docker"></i></span> Docker</div>
-      <div><span class="icon flag-wrap"><i class="fas fa-robot"></i></span> Agentic Development</div>
-      <div><span class="icon flag-wrap"><i class="fas fa-file-alt"></i></span> RAG</div>
-      <div><span class="icon flag-wrap"><i class="fas fa-project-diagram"></i></span> ETL Pipelines</div>
+      <div><span class="icon"><i class="fab fa-python"></i></span> Python</div>
+      <div><span class="icon"><i class="fas fa-database"></i></span> SQL</div>
+      <div><span class="icon"><i class="fas fa-brain"></i></span> Machine Learning</div>
+      <div><span class="icon"><i class="fab fa-docker"></i></span> Docker</div>
+      <div><span class="icon"><i class="fas fa-robot"></i></span> Agentic Development</div>
+      <div><span class="icon"><i class="fas fa-file-alt"></i></span> RAG</div>
+      <div><span class="icon"><i class="fas fa-project-diagram"></i></span> ETL Pipelines</div>
     </div>
   </div>
+
   <!-- Правая колонка — Языки -->
   <div>
     <h2>Языки</h2>
