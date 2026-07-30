@@ -1,78 +1,54 @@
 {{ define "main" }}
 
-{{ if .Content }}
-<section class="homepage-content">
-  {{ .Content }}
-</section>
+{{ with .Content }}
+<section class="homepage-content">{{ . }}</section>
 {{ end }}
 
-<!-- Последнее обновление -->
-{{ $ruNames := dict 
-  "science" "Наука"
-  "programs" "Программы"
-  "study" "Учёба"
-  "reading" "Чтение"
-  "contests" "Конкурсы"
-  "about" "О сайте"
+{{/* Последнее обновление — самый недавно изменённый раздел */}}
+{{ $ruNames := dict
+  "science"        "Наука"
+  "programs"       "Программы"
+  "study"          "Учёба"
+  "reading"        "Чтение"
   "hacks-contests" "Конкурсы"
 }}
 
-{{ $allPages := .Site.Pages }}
-{{ $pagesWithSection := where $allPages "Section" "!=" "" }}
-{{ $pagesNotHome := where $pagesWithSection "Kind" "!=" "home" }}
+{{ $candidates := where (where .Site.Pages "Kind" "in" (slice "page" "section")) "Section" "!=" "" }}
 
-{{ $sorted := sort $pagesNotHome "Lastmod" "desc" }}
-{{ if eq (len $sorted) 0 }}
-  {{ $sorted = sort $pagesNotHome "File.ModTime" "desc" }}
-{{ end }}
-
-{{ if $sorted }}
-  {{ $latest := index $sorted 0 }}
-  {{ $sectionKey := $latest.Section }}
-  {{ $sectionName := index $ruNames $sectionKey | default ($sectionKey | humanize | title) }}
-  {{ $sectionURL := printf "/%s/" ($sectionKey | urlize) | relURL }}
-  
-  {{ $date := $latest.Lastmod }}
-  {{ if not $date }}
-    {{ $date = $latest.File.ModTime }}
+{{ with first 1 (sort $candidates "Lastmod" "desc") }}
+  {{ range . }}
+    {{ $months := dict "1" "января" "2" "февраля" "3" "марта" "4" "апреля" "5" "мая" "6" "июня"
+                       "7" "июля" "8" "августа" "9" "сентября" "10" "октября" "11" "ноября" "12" "декабря" }}
+    {{ $name := index $ruNames .Section | default (.Section | humanize | title) }}
+    <p class="last-update">
+      Последнее обновление:
+      <a href="{{ printf "/%s/" .Section | relURL }}">{{ $name }}</a>
+      от {{ .Lastmod.Format "2" }} {{ index $months (.Lastmod.Format "1") }} {{ .Lastmod.Format "2006" }}
+    </p>
   {{ end }}
-  
-  {{ $day := $date.Format "2" }}
-  {{ $monthNum := $date.Format "1" }}
-  {{ $year := $date.Format "2006" }}
-  {{ $monthNames := dict "1" "января" "2" "февраля" "3" "марта" "4" "апреля" "5" "мая" "6" "июня" "7" "июля" "8" "августа" "9" "сентября" "10" "октября" "11" "ноября" "12" "декабря" }}
-  {{ $month := index $monthNames $monthNum }}
-  {{ $dateRu := printf "%s %s %s" $day $month $year }}
-  
-  <div class="last-update">
-    <span>Последнее обновление: </span>
-    <a href="{{ $sectionURL }}">{{ $sectionName }}</a>
-    <span> от {{ $dateRu }}</span>
-  </div>
 {{ end }}
 
-<!-- Навыки и Языки в две колонки -->
 <section class="two-columns">
   <div>
-    <h2>Навыки</h2>
+    <h2 class="labelled-rule">Навыки</h2>
     <div class="skills-list">
-      <div><span class="icon"><i class="fab fa-python"></i></span> Python</div>
-      <div><span class="icon"><i class="fas fa-database"></i></span> SQL</div>
-      <div><span class="icon"><i class="fas fa-brain"></i></span> Machine Learning</div>
-      <div><span class="icon"><i class="fab fa-docker"></i></span> Docker</div>
-      <div><span class="icon"><i class="fas fa-robot"></i></span> Agentic Development</div>
-      <div><span class="icon"><i class="fas fa-file-alt"></i></span> RAG</div>
-      <div><span class="icon"><i class="fas fa-project-diagram"></i></span> ETL Pipelines</div>
+      <div>Python</div>
+      <div>SQL</div>
+      <div>Machine Learning</div>
+      <div>Docker</div>
+      <div>Agentic Development</div>
+      <div>RAG</div>
+      <div>ETL Pipelines</div>
     </div>
   </div>
 
   <div>
-    <h2>Языки</h2>
+    <h2 class="labelled-rule">Языки</h2>
     <div class="skills-list">
-      <div><span class="icon flag-wrap"><span class="fi fi-ru"></span></span> Русский (родной)</div>
-      <div><span class="icon flag-wrap"><span class="fi fi-gb"></span></span> English (C2)</div>
-      <div><span class="icon flag-wrap"><span class="fi fi-de"></span></span> Deutsch (B1)</div>
-      <div><span class="icon flag-wrap"><span class="fi fi-fr"></span></span> Français (B1)</div>
+      <div>Русский — родной</div>
+      <div>English — C2</div>
+      <div>Deutsch — B1</div>
+      <div>Français — B1</div>
     </div>
   </div>
 </section>

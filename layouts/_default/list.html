@@ -1,65 +1,23 @@
 {{ define "main" }}
 
 <header class="section-header">
-
-<h1>{{ .Title }}</h1>
-
-{{ if .Content }}
-
-<div class="section-description">
-
-{{ .Content }}
-
-</div>
-
-{{ end }}
-
+  <h1 class="labelled-rule">{{ .Title }}</h1>
+  {{ with .Content }}
+  <div class="section-description">{{ . }}</div>
+  {{ end }}
 </header>
 
+{{ with .Pages }}
 <ul class="post-list">
-
-{{ range .Pages.ByDate.Reverse }}
-
-<li>
-
-<h2>
-
-<a href="{{ .RelPermalink }}">
-
-{{ .Title }}
-
-</a>
-
-</h2>
-
-<div class="post-meta">
-
-{{ if not .Date.IsZero }}
-
-{{ .Date.Format "02.01.2006" }}
-
-·
-
-{{ end }}
-
-{{ .ReadingTime }} мин
-
-</div>
-
-{{ with .Summary }}
-
-<p>
-
-{{ . }}
-
-</p>
-
-{{ end }}
-
-</li>
-
-{{ end }}
-
+  {{ range .ByDate.Reverse }}
+  <li>
+    <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+    <div class="post-meta">
+      {{ if not .Date.IsZero }}{{ .Date.Format "02.01.2006" }} · {{ end }}{{ .ReadingTime }} мин
+    </div>
+  </li>
+  {{ end }}
 </ul>
+{{ end }}
 
 {{ end }}

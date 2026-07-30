@@ -1,5 +1,5 @@
 baseURL = "https://strmcrown.dev/"
-languageCode = "ru"
+locale = "ru"
 defaultContentLanguage = "ru"
 title = "strmcrown"
 
@@ -9,12 +9,10 @@ enableRobotsTXT = true
 pagerSize = 10
 
 [permalinks]
-thoughts = "/thoughts/:slug/"
 science = "/science/:slug/"
 programs = "/programs/:slug/"
 study = "/study/:slug/"
 reading = "/reading/:slug/"
-photos = "/photos/:slug/"
 hacks-contests = "/hacks-contests/:slug/"
 
 [taxonomies]
@@ -34,13 +32,9 @@ lineNos = false
 author = "Viktor Savostyanov"
 description = "Личный блог о программировании, AI, Data Science и исследованиях."
 avatar = "/avatar.jpg"
-accent = "#c47a3a"
 
 # ==================== МЕНЮ ====================
-[[menu.main]]
-name = "Главная"
-url = "/"
-weight = -100
+# Ссылка на главную — в логотипе «strmcrown» слева сверху.
 
 [[menu.main]]
 name = "Наука"

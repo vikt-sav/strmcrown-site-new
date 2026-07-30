@@ -1,13 +1,21 @@
 <header class="site-header">
   <div class="container">
+
+    <div class="masthead">
+      <a class="wordmark" href="/">{{ .Site.Title }}</a>
+      {{ partial "theme-toggle.html" . }}
+    </div>
+
+    {{/* The menu is defined by URL, not pageRef, so .IsMenuCurrent can't
+         resolve entries to pages — compare paths instead. hasPrefix also
+         marks the section while reading one of its posts. */}}
+    {{ $here := .RelPermalink }}
     <nav class="site-nav">
       {{ range .Site.Menus.main }}
-        <a href="{{ .URL }}" class="{{ if $.IsMenuCurrent "main" . }}active{{ end }}">
-          {{ .Name }}
-        </a>
+        {{ $active := and (ne .URL "/") (hasPrefix $here .URL) }}
+        <a href="{{ .URL }}"{{ if $active }} class="active" aria-current="page"{{ end }}>{{ .Name }}</a>
       {{ end }}
-
-      {{ partial "theme-toggle.html" . }}
     </nav>
+
   </div>
 </header>

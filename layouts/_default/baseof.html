@@ -1,74 +1,19 @@
 <!doctype html>
-<html lang="ru">
+<html lang="{{ .Site.Language.Lang }}">
 
 {{ partial "head.html" . }}
 
 <body>
-<!-- SMART PROGRESS BAR -->
-<div id="progress-bar"></div>
 
 {{ partial "header.html" . }}
 
-<!-- HERO (ТОЛЬКО ДЛЯ ГЛАВНОЙ) -->
-{{ if .IsHome }}
-  {{ partial "hero.html" . }}
-{{ end }}
+{{ if .IsHome }}{{ partial "hero.html" . }}{{ end }}
 
 <main class="container">
-
   {{ block "main" . }}{{ end }}
-
 </main>
 
 {{ partial "footer.html" . }}
-
-<script src="/js/theme.js"></script>
-
-<script>
-// =========================
-// SMART PROGRESS BAR
-// =========================
-
-(function () {
-  const bar = document.getElementById("progress-bar");
-  if (!bar) return;
-
-  function getScrollProgress() {
-    const scrollTop = window.scrollY;
-    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    return (scrollTop / docHeight) * 100;
-  }
-
-  function getReadingProgress() {
-    const article = document.querySelector(".article-content");
-    if (!article) return null;
-
-    const rect = article.getBoundingClientRect();
-    const windowHeight = window.innerHeight;
-
-    const total = article.offsetHeight;
-    const visible = windowHeight - rect.top;
-
-    const progress = Math.min(Math.max(visible / total, 0), 1);
-    return progress * 100;
-  }
-
-  function update() {
-    const reading = getReadingProgress();
-
-    if (reading !== null) {
-      bar.style.width = reading + "%";
-    } else {
-      bar.style.width = getScrollProgress() + "%";
-    }
-  }
-
-  window.addEventListener("scroll", update, { passive: true });
-  window.addEventListener("resize", update);
-
-  update();
-})();
-</script>
 
 </body>
 </html>
