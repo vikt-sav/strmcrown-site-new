@@ -5,7 +5,8 @@
    (nav, labels, dates, record lines); a serif carries the prose. The machine
    labels the container, the human writes inside it.
 
-   No shadows, no glows, no radii, no icon fonts, no webfonts.
+   No shadows, no glows, no radii (bar the avatar), no icon fonts,
+   no webfonts.
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
@@ -238,12 +239,16 @@ blockquote {
   padding-bottom: 2.25rem;
 }
 
+/* The source file is a rounded tile on a white plate, so a square crop
+   leaves four white slivers in the corners. Clipped to a circle instead —
+   the disc sits inside the white, so none of it survives the crop. */
 .avatar {
   width: 64px;
   height: 64px;
   flex-shrink: 0;
   object-fit: cover;
   border: 1px solid var(--rule);
+  border-radius: 50%;
 }
 
 .hero h1 {

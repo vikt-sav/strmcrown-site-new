@@ -19,8 +19,15 @@
   <meta name="theme-color" content="#f1eee5" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0d0d0b" media="(prefers-color-scheme: dark)">
 
+  {{/* Google Search ignores any favicon that isn't square and a multiple of
+       48px, which is why the old 16x16 .ico never showed up next to the
+       result. The 48/96/192 PNGs below are what Search actually reads; the
+       .ico (now 16/32/48) and the 32x32 PNG are for browser tabs. */}}
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
   <link rel="apple-touch-icon" href="/apple-icon-180x180.png">
   <link rel="manifest" href="/manifest.json">
 
