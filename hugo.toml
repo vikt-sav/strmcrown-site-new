@@ -4,6 +4,7 @@ defaultContentLanguage = "ru"
 title = "strmcrown"
 
 enableRobotsTXT = true
+enableGitInfo = true
 
 [pagination]
 pagerSize = 10
