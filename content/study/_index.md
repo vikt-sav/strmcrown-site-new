@@ -9,6 +9,12 @@ lastmod: 2026-07-12
 <div class="resources-grid">
 
   <div class="resource-card">
+    <h3>AI Agents Security Week</h3>
+    <p>Хороший интенсив от Школы анализа данных Яндекса по базовым вещам: промпт-инъекции, обход ограничений и прочее. Пришлось реально смотреть лекции, чтобы получить проходной балл.</p>
+    <a href="https://lms.yandex.com/projects/profile/docs?id=c1e4956c-0c5a-4ae2-bdab-d5914e464b92" target="_blank" class="resource-link">Перейти к интенсиву →</a>
+  </div>
+
+  <div class="resource-card">
     <h3>CS50: Основы программирования</h3>
     <p>Один из лучших вводных курсов в мире от Гарварда. Языки программирования, структуры данных, память и многое другое.</p>
     <a href="https://cs50.harvard.edu/x/2024/" target="_blank" class="resource-link">Перейти на курс →</a>

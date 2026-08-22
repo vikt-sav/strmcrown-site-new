@@ -40,6 +40,17 @@ lastmod: 2026-07-15
         Книга не бесполезна, но целевая аудитория непонятна. Для новичков сложновато, для опытных — неинтересно. Плюс неудачный перевод и вёрстка.
       </p>
     </div>
+    <div class="book-card">
+      <div class="book-header">
+        <h3>Algebra, Topology, Differential Calculus, and Optimization Theory for Computer Science and Machine Learning</h3>
+        <p class="book-author">Jean Gallier, Jocelyn Quaintance</p>
+      </div>
+      <div class="book-rating" role="img" aria-label="Оценка: 5 из 5">█████</div>
+      <p class="book-review">
+        Больше двух тысяч страниц математики для МО. Целиком не читал, смотрел отдельные разделы.
+      </p>
+      <a href="https://www.cis.upenn.edu/~jean/gbooks/geomath.html" target="_blank" class="resource-link">Открыть книгу →</a>
+    </div>
   </div>
   <!-- Правая колонка — Художка -->
   <div class="reading-column">
@@ -104,5 +115,15 @@ lastmod: 2026-07-15
           Книга замечательная, но перевод отвратный: сильно ощущается машинный стиль с минимальной редактурой.
         </p>
       </div>
+    <div class="book-card">
+      <div class="book-header">
+        <h3>Книга Нового Солнца</h3>
+        <p class="book-author">Джин Вулф</p>
+      </div>
+      <div class="book-rating" role="img" aria-label="Оценка: 5 из 5">█████</div>
+      <p class="book-review">
+        Смесь фэнтэзи, научной фантастики и христологических размышлений. Необычно и интересно.
+      </p>
+    </div>
   </div>
 </div>
