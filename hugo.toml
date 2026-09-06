@@ -31,7 +31,7 @@ lineNos = false
 
 [params]
 author = "Viktor Savostyanov"
-description = "Личный блог о программировании, AI, Data Science и исследованиях."
+description = "Лингвист, преподающий перевод и исследующий LLM-системы: мультиагентная оценка машинного перевода, RAG, NLP."
 avatar = "/avatar.jpg"
 
 # ==================== МЕНЮ ====================

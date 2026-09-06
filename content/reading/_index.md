@@ -1,7 +1,7 @@
 ---
 title: "Чтение"
 description: "Книги, которые я прочитал и рекомендую. Или нет."
-lastmod: 2026-07-15
+lastmod: 2026-09-06
 ---
 
 Книги, которые я прочитал и рекомендую. Или нет.
@@ -123,6 +123,96 @@ lastmod: 2026-07-15
       <div class="book-rating" role="img" aria-label="Оценка: 5 из 5">█████</div>
       <p class="book-review">
         Смесь фэнтэзи, научной фантастики и христологических размышлений. Необычно и интересно.
+      </p>
+    </div>
+    <div class="book-card">
+      <div class="book-header">
+        <h3>Анафем</h3>
+        <p class="book-author">Нил Стивенсон</p>
+      </div>
+      <div class="book-rating" role="img" aria-label="Оценка: 9 из 10">█████████▒</div>
+      <p class="book-review">
+        Научная фантастика про далёкое будущее, сегрегацию между людьми, контакт с пришельцами и сущность знания. Очень интересно и длинно.
+      </p>
+    </div>
+    <div class="book-card">
+      <div class="book-header">
+        <h3>Господь гнева</h3>
+        <p class="book-author">Роджер Желязны, Филип Дик</p>
+      </div>
+      <div class="book-rating" role="img" aria-label="Оценка: 7 из 10">███████▒▒▒</div>
+      <p class="book-review">
+        Галлюцинаторное размышление на тему творца и творения.
+      </p>
+    </div>
+    <div class="book-card">
+      <div class="book-header">
+        <h3>Хроники Амбера</h3>
+        <p class="book-author">Роджер Желязны</p>
+      </div>
+      <div class="book-rating" role="img" aria-label="Оценка: 10 из 10">██████████</div>
+      <p class="book-review">
+        Цикл из десяти книг про Янтарное Королевство. Семейные склоки, фэнтэзи, параллельные реальности. Пушка-бомба.
+      </p>
+    </div>
+    <div class="book-card">
+      <div class="book-header">
+        <h3>Мечтают ли андроиды об электроовцах?</h3>
+        <p class="book-author">Филип Дик</p>
+      </div>
+      <div class="book-rating" role="img" aria-label="Оценка: 10 из 10">██████████</div>
+      <p class="book-review">
+        Классика киберпанка о природе человечности и продвинутых роботах.
+      </p>
+    </div>
+    <div class="book-card">
+      <div class="book-header">
+        <h3>Лавр</h3>
+        <p class="book-author">Евгений Водолазкин</p>
+      </div>
+      <div class="book-rating" role="img" aria-label="Оценка: 9 из 10">█████████▒</div>
+      <p class="book-review">
+        Роман-житие о средневековом целителе. Интересное сочетание постмодернистской слоёности, живой русской духовности и академизма.
+      </p>
+    </div>
+    <div class="book-card">
+      <div class="book-header">
+        <h3>Гамлет</h3>
+        <p class="book-author">Уильям Шекспир</p>
+      </div>
+      <div class="book-rating" role="img" aria-label="Оценка: 9 из 10">█████████▒</div>
+      <p class="book-review">
+        Трагическая пьеса о мести. С непривычки Шекспира всегда сложно читать, но потом стиль затягивает.
+      </p>
+    </div>
+    <div class="book-card">
+      <div class="book-header">
+        <h3>Кровавый меридиан</h3>
+        <p class="book-author">Кормак Маккарти</p>
+      </div>
+      <div class="book-rating" role="img" aria-label="Оценка: 9 из 10">█████████▒</div>
+      <p class="book-review">
+        Беспощадный вестерн про четырнадцатилетнего пацана в компании откровенных маргиналов и убийц. Хороших персонажей тут нет, и некоторые откровенно пугают.
+      </p>
+    </div>
+    <div class="book-card">
+      <div class="book-header">
+        <h3>Сокровенный человек</h3>
+        <p class="book-author">Андрей Платонов</p>
+      </div>
+      <div class="book-rating" role="img" aria-label="Оценка: 10 из 10">██████████</div>
+      <p class="book-review">
+        Если любите стиль Платонова, то больше рекламировать и не требуется.
+      </p>
+    </div>
+    <div class="book-card">
+      <div class="book-header">
+        <h3>Очарованный странник</h3>
+        <p class="book-author">Николай Лесков</p>
+      </div>
+      <div class="book-rating" role="img" aria-label="Оценка: 8 из 10">████████▒▒</div>
+      <p class="book-review">
+        Сказ о жизненном пути монаха, который изначально не собирался им становиться.
       </p>
     </div>
   </div>

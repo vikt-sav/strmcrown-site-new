@@ -1,10 +1,12 @@
 ---
 title: "Учёба"
 description: "Полезные курсы, материалы и ресурсы для самообучения"
-lastmod: 2026-07-12
+lastmod: 2026-09-06
 ---
 
 Полезные материалы, курсы и ресурсы.
+
+<h2 class="labelled-rule">Пройдено</h2>
 
 <div class="resources-grid">
 
@@ -13,6 +15,28 @@ lastmod: 2026-07-12
     <p>Хороший интенсив от Школы анализа данных Яндекса по базовым вещам: промпт-инъекции, обход ограничений и прочее. Пришлось реально смотреть лекции, чтобы получить проходной балл.</p>
     <a href="https://lms.yandex.com/projects/profile/docs?id=c1e4956c-0c5a-4ae2-bdab-d5914e464b92" target="_blank" class="resource-link">Перейти к интенсиву →</a>
   </div>
+
+  <div class="resource-card">
+    <h3>Промпт-инжиниринг</h3>
+    <p>Курс от ИТ школы РТК. К началу курса практически весь материал уже знал, но повторение не помешает.</p>
+  </div>
+
+</div>
+
+<h2 class="labelled-rule">В процессе</h2>
+
+<div class="resources-grid">
+
+  <div class="resource-card">
+    <h3>Яндекс Практикум: Data Science</h3>
+    <p>Основная учебная программа на сейчас.</p>
+  </div>
+
+</div>
+
+<h2 class="labelled-rule">Ресурсы</h2>
+
+<div class="resources-grid">
 
   <div class="resource-card">
     <h3>CS50: Основы программирования</h3>
