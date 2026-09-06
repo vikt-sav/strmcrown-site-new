@@ -7,12 +7,49 @@
    inside it.
 
    No shadows, no glows, no radii (bar the avatar), no icon fonts,
-   no webfonts.
+   no webfonts — bar one: PT Serif, self-hosted, for a Cyrillic that
+   matches its Latin.
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
    Tokens
    -------------------------------------------------------------------------- */
+
+/* PT Serif, self-hosted: the one webfont exception to the no-webfonts rule.
+   Its Latin and Cyrillic are cut by the same hand, so mixed-script text
+   reads as one voice on every machine. Subsetting + woff2 keeps it at
+   ~90KB per face. */
+@font-face {
+  font-family: "PT Serif";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/pt-serif-regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "PT Serif";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/pt-serif-italic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "PT Serif";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/pt-serif-bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "PT Serif";
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/pt-serif-bolditalic.woff2") format("woff2");
+}
 
 :root {
   color-scheme: light;
@@ -24,8 +61,8 @@
   --rule:    #d3cdbf;
   --accent:  #9c4a16;  /* burnt copper */
 
-  --serif: Georgia, "Iowan Old Style", "Noto Serif", "Liberation Serif",
-           "Times New Roman", serif;
+  --serif: "PT Serif", Georgia, "Iowan Old Style", "Noto Serif",
+           "Liberation Serif", "Times New Roman", serif;
   --mono:  ui-monospace, SFMono-Regular, "SF Mono", "JetBrains Mono",
            "Cascadia Mono", Menlo, Consolas, "DejaVu Sans Mono",
            "Liberation Mono", monospace;
