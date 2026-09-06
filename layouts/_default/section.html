@@ -2,6 +2,12 @@
 
 <header class="section-header">
   <h1 class="labelled-rule">{{ .Title }}</h1>
+  {{ if eq .Kind "section" }}
+  <div class="post-meta section-code">
+    <span class="doc-code">[REC:{{ .Section | upper }}]</span> ·
+    {{ with .Lastmod }}<span class="filed">FILED:</span> <time datetime="{{ .Format "2006-01-02" }}">{{ .Format "02.01.2006" }}</time>{{ end }}
+  </div>
+  {{ end }}
   {{ with .Content }}
   <div class="section-description">{{ . }}</div>
   {{ end }}

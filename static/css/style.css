@@ -1,9 +1,10 @@
 /* ==========================================================================
    strmcrown.dev
 
-   Direction: parchment and oxidised copper. Full monospace: one system
-   mono family carries everything — structure, headings, prose. The whole
-   page reads as one machine-set document.
+   Direction: parchment and oxidised copper. A serif carries the prose;
+   monospace carries the machine layer — headings, labels, doc codes,
+   filing stamps. The machine labels the container, the human writes
+   inside it.
 
    No shadows, no glows, no radii (bar the avatar), no icon fonts,
    no webfonts.
@@ -23,6 +24,8 @@
   --rule:    #d3cdbf;
   --accent:  #9c4a16;  /* burnt copper */
 
+  --serif: Georgia, "Iowan Old Style", "Noto Serif", "Liberation Serif",
+           "Times New Roman", serif;
   --mono:  ui-monospace, SFMono-Regular, "SF Mono", "JetBrains Mono",
            "Cascadia Mono", Menlo, Consolas, "DejaVu Sans Mono",
            "Liberation Mono", monospace;
@@ -56,6 +59,30 @@
   --accent: #cf8642;
 }
 
+/* Amber phosphor breathes: the accent flickers almost imperceptibly,
+   like a filament holding its charge. Dark mode only; disabled for
+   reduced-motion users. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .doc-code,
+  :root:not([data-theme="light"]) .book-rating {
+    animation: phosphor 4.5s ease-in-out infinite;
+  }
+}
+
+:root[data-theme="dark"] .doc-code,
+:root[data-theme="dark"] .book-rating {
+  animation: phosphor 4.5s ease-in-out infinite;
+}
+
+@keyframes phosphor {
+  0%, 100% { opacity: 1; }
+  46%      { opacity: 1; }
+  50%      { opacity: 0.92; }
+  54%      { opacity: 1; }
+  71%      { opacity: 0.96; }
+  74%      { opacity: 1; }
+}
+
 /* --------------------------------------------------------------------------
    Base
    -------------------------------------------------------------------------- */
@@ -68,7 +95,7 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font: 400 16px/1.75 var(--mono);
+  font: 400 17px/1.72 var(--serif);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -144,6 +171,7 @@ blockquote {
   padding-left: 1.2rem;
   border-left: 2px solid var(--rule);
   color: var(--muted);
+  font-style: italic;
 }
 
 /* The one repeated device: a rule that carries its own label.
@@ -341,6 +369,17 @@ blockquote {
   color: var(--muted);
 }
 
+/* Machine identity of a record: inventory code + filing stamp.
+   Archive card: the database entry line on a parchment sheet. */
+.doc-code {
+  color: var(--accent);
+  letter-spacing: 0.06em;
+}
+
+.post-meta .filed {
+  text-transform: uppercase;
+}
+
 /* --------------------------------------------------------------------------
    Article
    -------------------------------------------------------------------------- */
@@ -533,4 +572,5 @@ blockquote {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+  .doc-code, .book-rating { animation: none !important; }
 }
