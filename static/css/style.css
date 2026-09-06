@@ -564,6 +564,17 @@ blockquote {
 .resource-card p:last-child,
 .book-review:last-child { margin-bottom: 0; }
 
+/* Tech signature of a record: backend / frontend / ml core, in one
+   machine-set line. Lowercase, dot-separated — an inventory tag. */
+.tech-line {
+  font: 400 var(--label)/1.6 var(--mono);
+  letter-spacing: 0.03em;
+  color: var(--muted);
+}
+
+.tech-line strong,
+.tech-line b { color: var(--accent); font-weight: 400; }
+
 .resource-link {
   display: inline-block;
   font: 400 var(--label)/1.5 var(--mono);
