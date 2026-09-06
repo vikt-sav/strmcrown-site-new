@@ -1,10 +1,9 @@
 /* ==========================================================================
    strmcrown.dev
 
-   Direction: parchment and oxidised copper. Monospace sets the structure
-   (nav, labels, dates, record lines) and carries the headings; a serif
-   carries the prose only. The machine labels the container, the human
-   writes inside it.
+   Direction: parchment and oxidised copper. Full monospace: one system
+   mono family carries everything — structure, headings, prose. The whole
+   page reads as one machine-set document.
 
    No shadows, no glows, no radii (bar the avatar), no icon fonts,
    no webfonts.
@@ -24,8 +23,6 @@
   --rule:    #d3cdbf;
   --accent:  #9c4a16;  /* burnt copper */
 
-  --serif: Georgia, "Iowan Old Style", "Noto Serif", "Liberation Serif",
-           "Times New Roman", serif;
   --mono:  ui-monospace, SFMono-Regular, "SF Mono", "JetBrains Mono",
            "Cascadia Mono", Menlo, Consolas, "DejaVu Sans Mono",
            "Liberation Mono", monospace;
@@ -71,7 +68,7 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font: 400 17px/1.72 var(--serif);
+  font: 400 16px/1.75 var(--mono);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -147,7 +144,6 @@ blockquote {
   padding-left: 1.2rem;
   border-left: 2px solid var(--rule);
   color: var(--muted);
-  font-style: italic;
 }
 
 /* The one repeated device: a rule that carries its own label.
