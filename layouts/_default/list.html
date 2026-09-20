@@ -19,7 +19,7 @@
   <li>
     <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
     <div class="post-meta">
-      {{ if not .Date.IsZero }}{{ .Date.Format "02.01.2006" }} · {{ end }}{{ .ReadingTime }} мин
+      {{ if not .Date.IsZero }}{{ .Date.Format "02.01.2006" }} · {{ end }}{{ .ReadingTime }} {{ i18n "minShort" }}
     </div>
   </li>
   {{ end }}

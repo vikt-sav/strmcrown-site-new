@@ -289,6 +289,23 @@ blockquote {
 
 .theme-toggle:hover { color: var(--accent); }
 
+.lang-switch {
+  color: var(--muted);
+  font: 400 0.78rem/1.6 var(--mono);
+  letter-spacing: 0.03em;
+  border-bottom: 1px solid transparent;
+}
+
+.lang-switch:hover { color: var(--accent); }
+
+.lang-banner {
+  border-bottom: 1px solid var(--rule);
+  padding: 0.6rem 0;
+  font: 400 var(--label)/1.6 var(--mono);
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
 /* --------------------------------------------------------------------------
    Hero — home only
    -------------------------------------------------------------------------- */

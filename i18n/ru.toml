@@ -1,0 +1,28 @@
+toggleTheme = "Переключить тему"
+switchLang = "English version (machine-translated by DeepL)"
+deeplNote = "Английская версия — автоматический машинный перевод, выполненный сервисом DeepL."
+authorName = "Виктор Савостьянов"
+heroSubtitle = "Лингвист · Преподаватель · ML Engineer"
+lastUpdate = "Последнее обновление:"
+lastUpdateSep = "от"
+skillsHeading = "Навыки"
+languagesHeading = "Языки"
+langRuNative = "Русский — родной"
+minRead = "мин чтения"
+words = "слов"
+minShort = "мин"
+
+["sec_science"]
+other = "Наука"
+
+["sec_programs"]
+other = "Программы"
+
+["sec_study"]
+other = "Учёба"
+
+["sec_reading"]
+other = "Чтение"
+
+["sec_hacks-contests"]
+other = "Конкурсы"

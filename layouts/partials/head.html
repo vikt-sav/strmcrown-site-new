@@ -31,7 +31,11 @@
   <link rel="apple-touch-icon" href="/apple-icon-180x180.png">
   <link rel="manifest" href="/manifest.json">
 
-  <link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" href="/index.xml">
+  <link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" href="{{ "index.xml" | relLangURL }}">
+
+  {{ range .Translations }}
+  <link rel="alternate" hreflang="{{ .Language.LanguageCode | default .Language.Lang }}" href="{{ .Permalink }}">
+  {{ end }}
 
   <link rel="stylesheet" href="/css/style.css">
 
@@ -49,6 +53,8 @@
   </script>
 
   <script defer src="/js/theme.js"></script>
+
+  <script defer src="/js/lang.js"></script>
 
   <script defer src="https://cloud.umami.is/script.js"
           data-website-id="9e39dd1c-91fa-410a-aa1f-a16b5bf6f7f2"></script>

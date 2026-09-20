@@ -34,35 +34,84 @@ author = "Viktor Savostyanov"
 description = "Лингвист, преподающий перевод и исследующий LLM-системы: мультиагентная оценка машинного перевода, RAG, NLP."
 avatar = "/avatar.jpg"
 
-# ==================== МЕНЮ ====================
-# Ссылка на главную — в логотипе «strmcrown» слева сверху.
+# ==================== ЯЗЫКИ ====================
+# RU — основная версия (в корне), EN — машинный перевод DeepL (в /en/).
+# Переводы контента генерирует scripts/translate.py в CI (см. .github/workflows/hugo.yml).
 
-[[menu.main]]
+[languages]
+  [languages.ru]
+    weight = 1
+    languageCode = "ru-RU"
+    languageName = "RU"
+
+  [languages.en]
+    weight = 2
+    languageCode = "en-US"
+    languageName = "EN"
+
+    [languages.en.params]
+      description = "Linguist teaching translation and researching LLM systems: multi-agent MT evaluation, RAG, NLP."
+
+# Меню определено через pageRef, чтобы Hugo сам подставлял префикс языка
+# (/science/ для RU, /en/science/ для EN) и корректно работал подсветка
+# активного пункта в header.html.
+
+[[languages.ru.menu.main]]
 name = "Наука"
-url = "/science/"
+pageRef = "/science/"
 weight = 1
 
-[[menu.main]]
+[[languages.ru.menu.main]]
 name = "Программы"
-url = "/programs/"
+pageRef = "/programs/"
 weight = 2
 
-[[menu.main]]
+[[languages.ru.menu.main]]
 name = "Учёба"
-url = "/study/"
+pageRef = "/study/"
 weight = 3
 
-[[menu.main]]
+[[languages.ru.menu.main]]
 name = "Чтение"
-url = "/reading/"
+pageRef = "/reading/"
 weight = 4
 
-[[menu.main]]
+[[languages.ru.menu.main]]
 name = "Конкурсы"
-url = "/hacks-contests/"
+pageRef = "/hacks-contests/"
 weight = 5
 
-[[menu.main]]
+[[languages.ru.menu.main]]
 name = "О сайте"
-url = "/about/"
+pageRef = "/about/"
+weight = 6
+
+[[languages.en.menu.main]]
+name = "Science"
+pageRef = "/science/"
+weight = 1
+
+[[languages.en.menu.main]]
+name = "Programs"
+pageRef = "/programs/"
+weight = 2
+
+[[languages.en.menu.main]]
+name = "Study"
+pageRef = "/study/"
+weight = 3
+
+[[languages.en.menu.main]]
+name = "Reading"
+pageRef = "/reading/"
+weight = 4
+
+[[languages.en.menu.main]]
+name = "Contests"
+pageRef = "/hacks-contests/"
+weight = 5
+
+[[languages.en.menu.main]]
+name = "About"
+pageRef = "/about/"
 weight = 6

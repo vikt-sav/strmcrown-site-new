@@ -2,8 +2,9 @@
   <div class="container">
 
     <div class="masthead">
-      <a class="wordmark" href="/">{{ .Site.Title }}</a>
+      <a class="wordmark" href="{{ .Site.Home.RelPermalink }}">{{ .Site.Title }}</a>
       {{ partial "theme-toggle.html" . }}
+      {{ partial "lang-switch.html" . }}
     </div>
 
     {{/* The menu is defined by URL, not pageRef, so .IsMenuCurrent can't

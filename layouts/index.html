@@ -5,32 +5,22 @@
 {{ end }}
 
 {{/* Последнее обновление — самый недавно изменённый раздел */}}
-{{ $ruNames := dict
-  "science"        "Наука"
-  "programs"       "Программы"
-  "study"          "Учёба"
-  "reading"        "Чтение"
-  "hacks-contests" "Конкурсы"
-}}
-
 {{ $candidates := where (where .Site.Pages "Kind" "in" (slice "page" "section")) "Section" "!=" "" }}
 
 {{ with first 1 (sort $candidates "Lastmod" "desc") }}
   {{ range . }}
-    {{ $months := dict "1" "января" "2" "февраля" "3" "марта" "4" "апреля" "5" "мая" "6" "июня"
-                       "7" "июля" "8" "августа" "9" "сентября" "10" "октября" "11" "ноября" "12" "декабря" }}
-    {{ $name := index $ruNames .Section | default (.Section | humanize | title) }}
+    {{ $name := i18n (printf "sec_%s" .Section) | default (.Section | humanize | title) }}
     <p class="last-update">
-      Последнее обновление:
-      <a href="{{ printf "/%s/" .Section | relURL }}">{{ $name }}</a>
-      от {{ .Lastmod.Format "2" }} {{ index $months (.Lastmod.Format "1") }} {{ .Lastmod.Format "2006" }}
+      {{ i18n "lastUpdate" }}
+      <a href="{{ printf "%s/" .Section | relLangURL }}">{{ $name }}</a>
+      {{ i18n "lastUpdateSep" }} {{ time.Format ":date_long" .Lastmod }}
     </p>
   {{ end }}
 {{ end }}
 
 <section class="two-columns">
   <div>
-    <h2 class="labelled-rule">Навыки</h2>
+    <h2 class="labelled-rule">{{ i18n "skillsHeading" }}</h2>
     <div class="skills-list">
       <div>Python</div>
       <div>SQL</div>
@@ -43,9 +33,9 @@
   </div>
 
   <div>
-    <h2 class="labelled-rule">Языки</h2>
+    <h2 class="labelled-rule">{{ i18n "languagesHeading" }}</h2>
     <div class="skills-list">
-      <div>Русский — родной</div>
+      <div>{{ i18n "langRuNative" }}</div>
       <div>English — C2</div>
       <div>Deutsch — B1</div>
       <div>Français — B1</div>

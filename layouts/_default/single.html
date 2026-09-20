@@ -9,7 +9,7 @@
       {{ if not .Date.IsZero }}
         <span class="filed">FILED:</span> <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02.01.2006" }}</time> ·
       {{ end }}
-      {{ .ReadingTime }} мин чтения · {{ .WordCount }} слов
+      {{ .ReadingTime }} {{ i18n "minRead" }} · {{ .WordCount }} {{ i18n "words" }}
     </div>
 
     {{ with .Params.tags }}

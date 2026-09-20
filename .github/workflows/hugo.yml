@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -33,6 +33,26 @@ jobs:
           # break the deploy with no change on our side.
           hugo-version: '0.164.0'
           extended: true
+
+      # Regenerates *.en.md only for sources changed since the last run
+      # (hash cache in .translation-cache.json), then commits the new
+      # translations back so the next build skips the API for them.
+      - name: Translate content (DeepL)
+        env:
+          DEEPL_API_KEY: ${{ secrets.DEEPL_API_KEY }}
+        run: python3 scripts/translate.py content
+
+      - name: Commit updated translations
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add content .translation-cache.json
+          if git diff --cached --quiet; then
+            echo "Translations are up to date"
+          else
+            git commit -m "chore: refresh DeepL translations [skip ci]"
+            git push
+          fi
 
       - name: Build
         run: hugo --gc --minify

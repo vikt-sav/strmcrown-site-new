@@ -1,0 +1,28 @@
+toggleTheme = "Toggle theme"
+switchLang = "Русская версия"
+deeplNote = "This English version is machine-translated by DeepL."
+authorName = "Viktor Savostyanov"
+heroSubtitle = "Linguist · Lecturer · ML Engineer"
+lastUpdate = "Last updated:"
+lastUpdateSep = "·"
+skillsHeading = "Skills"
+languagesHeading = "Languages"
+langRuNative = "Russian — native"
+minRead = "min read"
+words = "words"
+minShort = "min"
+
+["sec_science"]
+other = "Science"
+
+["sec_programs"]
+other = "Programs"
+
+["sec_study"]
+other = "Study"
+
+["sec_reading"]
+other = "Reading"
+
+["sec_hacks-contests"]
+other = "Contests"

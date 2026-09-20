@@ -1,0 +1,15 @@
+{{/* Ссылка на перевод этой страницы; если перевода нет — на главную
+     другого языка. data-pref-lang запоминает ручной выбор, чтобы
+     автоопределение языка по IP больше не перебрасывало посетителя. */}}
+{{ $target := "" }}
+{{ range .AllTranslations }}
+  {{ if ne .Language.Lang $.Site.Language.Lang }}{{ $target = .RelPermalink }}{{ end }}
+{{ end }}
+
+{{ if eq .Site.Language.Lang "en" }}
+  {{ if not $target }}{{ $target = "/" }}{{ end }}
+  <a class="lang-switch" href="{{ $target }}" data-pref-lang="ru">RU</a>
+{{ else }}
+  {{ if not $target }}{{ $target = "/en/" }}{{ end }}
+  <a class="lang-switch" href="{{ $target }}" data-pref-lang="en" title="{{ i18n "switchLang" }}">EN</a>
+{{ end }}

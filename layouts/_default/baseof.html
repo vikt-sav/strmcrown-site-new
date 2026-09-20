@@ -1,11 +1,13 @@
 <!doctype html>
-<html lang="{{ .Site.Language.Lang }}">
+<html lang="{{ .Site.Language.Lang }}"{{ if ne .Language.Lang "en" }}{{ $enURL := "" }}{{ range .AllTranslations }}{{ if eq .Language.Lang "en" }}{{ $enURL = .RelPermalink }}{{ end }}{{ end }} data-en-url="{{ $enURL | default "/en/" }}"{{ end }}>
 
 {{ partial "head.html" . }}
 
 <body>
 
 {{ partial "header.html" . }}
+
+{{ if eq .Language.Lang "en" }}{{ partial "deepl-note.html" . }}{{ end }}
 
 {{ if .IsHome }}{{ partial "hero.html" . }}{{ end }}
 
