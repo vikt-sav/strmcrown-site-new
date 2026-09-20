@@ -54,7 +54,19 @@ def protect(text: str) -> tuple[str, list[str]]:
 
 
 def restore(text: str, bag: list[str]) -> str:
+    """DeepL treats the placeholder tokens as HTML tags: it keeps the
+    opening ones in place but appends auto-closing ones at the end of
+    the text. Restore the protected spans from the opening tags and
+    drop the stray closing ones."""
+    text = re.sub(r"</deepl-ph\d+>", "", text)
     return PH_RE.sub(lambda m: bag[int(m.group(1))], text)
+
+
+# DeepL is inconsistent with the latin spelling of the author's name;
+# force the canonical one after every translation.
+NORMALIZE = [
+    ("Victor Savostyanov", "Viktor Savostyanov"),
+]
 
 
 def parse_front_matter(text: str) -> tuple[str, list[tuple[str, str]], str]:
@@ -103,6 +115,12 @@ def translate_texts(key: str, texts: list[str], mock: bool) -> list[str]:
     return [item["text"] for item in data["translations"]]
 
 
+def replace_all(text: str) -> str:
+    for source, target in NORMALIZE:
+        text = text.replace(source, target)
+    return text
+
+
 def translate_file(path: Path, key: str, mock: bool) -> None:
     source = path.read_text(encoding="utf-8")
     raw_fm, fm_lines, body = parse_front_matter(source)
@@ -116,7 +134,8 @@ def translate_file(path: Path, key: str, mock: bool) -> None:
             requested.append(name)
 
     results = translate_texts(key, texts, mock)
-    translated_body = restore(results[0], bag).strip("\n")
+    results = [replace_all(restore(result, bag)) for result in results]
+    translated_body = results[0].strip("\n")
 
     replacements = {
         name: quote(translated.replace("\\", ""))
