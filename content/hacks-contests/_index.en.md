@@ -1,7 +1,7 @@
 ---
 title: "Contests and Hackathons"
 description: "Hackathons and competitions I&#x27;ve participated in"
-lastmod: 2026-09-06
+lastmod: 2026-10-08
 ---
 
 This page lists the hackathons and competitions I&#x27;ve participated in.
@@ -9,10 +9,18 @@ This page lists the hackathons and competitions I&#x27;ve participated in.
 <div class="resources-grid">
 
   <div class="resource-card">
+    <h3>Moscow Transportation Hackathon 2026</h3>
+    <p>Task: “AI Transport Delay Predictor”: real-time delay forecasting using NDTP telemetry.
+    I scored 21.5 points in the main round (the top 10 required 22–23 points).</p>
+    <p class="tech-line"><b>ml:</b> CatBoost, HMM matching, ONNX · <b>backend:</b> FastAPI, WebSocket · <b>frontend:</b> MapLibre · Docker</p>
+    <a href="https://mt-hackathon.ru" target="_blank" class="resource-link">Read more →</a>
+  </div>
+
+  <div class="resource-card">
     <h3>MTS True Tech Hack 2026</h3>
-    <p>Participation in an MTS hackathon. Developing solutions as part of a team.</p>
+    <p>Participation in the MTS hackathon. Team-based solution development.</p>
     <p class="tech-line"><b>backend:</b> FastAPI · <b>frontend:</b> Streamlit · <b>ML:</b> YandexGPT · Docker, self-hosted</p>
-    <a href="https://truetecharena.ru/contests/true-tech-hack2026#overview" target="_blank" class="resource-link">Learn more →</a>
+    <a href="https://truetecharena.ru/contests/true-tech-hack2026#overview" target="_blank" class="resource-link">Read more →</a>
   </div>
 
   <div class="resource-card">

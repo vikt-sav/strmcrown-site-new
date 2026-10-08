@@ -4,18 +4,32 @@ description: "My Open Projects and Useful Tools"
 lastmod: 2026-10-08
 ---
 
-This page features a collection of my projects, scripts, and apps.
+This page features a collection of my projects, scripts, and applications.
 
 <div class="resources-grid">
 
   <div class="resource-card">
     <div class="book-header">
-      <h3>CargaPronto: Delivery Delay Forecast</h3>
+      <h3>Transport Delay Predictor</h3>
+      <p class="book-author">Streaming ML • Geo-matching (HMM) • Real-time dashboard</p>
+    </div>
+    <p class="book-review">
+      Streaming prediction of public transit delays: binary NDTP protocol over TCP, GPS matching
+      with schedules, HMM mapping of tracks to OSM streets, CatBoost on 69 features with strict anti-leakage.
+      Honest streaming evaluation: MAE 42 s vs. 93 s for the baseline. Dispatcher dashboard on MapLibre
+      with “what-if” scenarios, Docker Compose (3 services), ONNX export, 18 tests.
+    </p>
+    <a href="https://github.com/vikt-sav/transport-delay-predictor" target="_blank" class="resource-link">GitHub →</a>
+  </div>
+
+  <div class="resource-card">
+    <div class="book-header">
+      <h3>CargaPronto: delivery delay prediction</h3>
       <p class="book-author">Machine Learning • Clustering + Classification • Educational Project</p>
     </div>
     <p class="book-review">
       K-Means customer segmentation (geography + RFM profiles) and CatBoost delay risk prediction for a logistics operator.
-      GroupShuffleSplit by customers, fit-on-train clustering without holdout. ROC-AUC test: 0.7721 (threshold 0.75); clusters contribute +0.015.
+      GroupShuffleSplit by customer, fit-on-train clustering without holdout. Test ROC-AUC 0.7721 (threshold 0.75): clusters contribute +0.015.
       The hypothesis about “problem customers” is only partially confirmed: behavior is informative (15.4% importance), while geography is not (6.0%).
     </p>
     <a href="https://github.com/vikt-sav/unsupervised-learning-prediction-ml" target="_blank" class="resource-link">GitHub →</a>
