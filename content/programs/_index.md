@@ -1,12 +1,25 @@
 ---
 title: "Программы"
 description: "Мои открытые проекты и полезные инструменты"
-lastmod: 2026-07-10
+lastmod: 2026-10-08
 ---
 
 Здесь собраны мои проекты, скрипты и приложения.
 
 <div class="resources-grid">
+
+  <div class="resource-card">
+    <div class="book-header">
+      <h3>CargaPronto: прогноз задержек доставки</h3>
+      <p class="book-author">Машинное обучение • кластеризация + классификация • учебный проект</p>
+    </div>
+    <p class="book-review">
+      Сегментация клиентов K-Means (география + RFM-профили) и прогноз риска задержки CatBoost для логистического оператора.
+      GroupShuffleSplit по клиентам, кластеризация fit-on-train без утечек. Test ROC-AUC 0.7721 (планка 0.75): кластеры дают +0.015.
+      Гипотеза о «проблемных клиентах» подтверждена наполовину: поведение информативно (15.4% важности), география нет (6.0%).
+    </p>
+    <a href="https://github.com/vikt-sav/unsupervised-learning-prediction-ml" target="_blank" class="resource-link">GitHub →</a>
+  </div>
 
   <div class="resource-card">
     <div class="book-header">
