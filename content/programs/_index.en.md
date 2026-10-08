@@ -1,12 +1,25 @@
 ---
 title: "Programs"
 description: "My Open Projects and Useful Tools"
-lastmod: 2026-07-10
+lastmod: 2026-10-08
 ---
 
-This page features a collection of my projects, scripts, and applications.
+This page features a collection of my projects, scripts, and apps.
 
 <div class="resources-grid">
+
+  <div class="resource-card">
+    <div class="book-header">
+      <h3>CargaPronto: Delivery Delay Forecast</h3>
+      <p class="book-author">Machine Learning • Clustering + Classification • Educational Project</p>
+    </div>
+    <p class="book-review">
+      K-Means customer segmentation (geography + RFM profiles) and CatBoost delay risk prediction for a logistics operator.
+      GroupShuffleSplit by customers, fit-on-train clustering without holdout. ROC-AUC test: 0.7721 (threshold 0.75); clusters contribute +0.015.
+      The hypothesis about “problem customers” is only partially confirmed: behavior is informative (15.4% importance), while geography is not (6.0%).
+    </p>
+    <a href="https://github.com/vikt-sav/unsupervised-learning-prediction-ml" target="_blank" class="resource-link">GitHub →</a>
+  </div>
 
   <div class="resource-card">
     <div class="book-header">
@@ -14,7 +27,7 @@ This page features a collection of my projects, scripts, and applications.
       <p class="book-author">Running Log</p>
     </div>
     <p class="book-review">
-      A simple and user-friendly app for keeping a running log. It automatically calculates pace and speed, tracks your history, displays progress charts, and supports multiple users.
+      A simple and convenient app for keeping a running log. Automatic pace and speed calculation, history, progress charts, and support for multiple users.
     </p>
     <a href="https://github.com/vikt-sav/logrun-running-log" target="_blank" class="resource-link">GitHub →</a>
   </div>
@@ -22,7 +35,7 @@ This page features a collection of my projects, scripts, and applications.
   <div class="resource-card">
     <div class="book-header">
       <h3>Multi-Agent Translation Evaluator</h3>
-      <p class="book-author">Translation Quality Assessment</p>
+      <p class="book-author">Translation Quality Evaluation</p>
     </div>
     <p class="book-review">
       A multi-agent system for evaluating the quality of machine translation (English → Russian) using several specialized LLM agents and a moderator. Used for scientific research.
@@ -47,7 +60,7 @@ This page features a collection of my projects, scripts, and applications.
       <p class="book-author">AI Assistant</p>
     </div>
     <p class="book-review">
-      Norbert AI — a ready-to-use architecture for building intelligent assistants. Semantic search, graph, RAG, web search and search across scientific databases, annotation, and analytics via LLM.
+      Norbert AI — a ready-to-use architecture for building intelligent assistants. Semantic search, graph, RAG, web search, and scientific database search, annotation, and analytics via LLM.
     </p>
     <a href="https://github.com/vikt-sav/norbert-ai" target="_blank" class="resource-link">GitHub →</a>
   </div>
