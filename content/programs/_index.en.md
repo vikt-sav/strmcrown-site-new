@@ -11,13 +11,14 @@ This page features a collection of my projects, scripts, and applications.
   <div class="resource-card">
     <div class="book-header">
       <h3>Transport Delay Predictor</h3>
-      <p class="book-author">Streaming ML • Geo-matching (HMM) • Real-time dashboard</p>
+      <p class="book-author">Moscow Public Transportation Hackathon • Streaming ML • Geo-matching (HMM)</p>
     </div>
     <p class="book-review">
-      Streaming prediction of public transit delays: binary NDTP protocol over TCP, GPS matching
+      Streaming public transit delay prediction: NDTP binary protocol over TCP, GPS matching
       with schedules, HMM mapping of tracks to OSM streets, CatBoost on 69 features with strict anti-leakage.
-      Honest streaming evaluation: MAE 42 s vs. 93 s for the baseline. Dispatcher dashboard on MapLibre
+      Fair streaming evaluation: MAE 42 s vs. 93 s for the baseline. Dispatcher dashboard on MapLibre
       with “what-if” scenarios, Docker Compose (3 services), ONNX export, 18 tests.
+      Hackathon solution, built solo in 2 days using agents, then pushed to the repository.
     </p>
     <a href="https://github.com/vikt-sav/transport-delay-predictor" target="_blank" class="resource-link">GitHub →</a>
   </div>
@@ -25,7 +26,7 @@ This page features a collection of my projects, scripts, and applications.
   <div class="resource-card">
     <div class="book-header">
       <h3>CargaPronto: delivery delay prediction</h3>
-      <p class="book-author">Machine Learning • Clustering + Classification • Educational Project</p>
+      <p class="book-author">Machine learning • clustering + classification • educational project</p>
     </div>
     <p class="book-review">
       K-Means customer segmentation (geography + RFM profiles) and CatBoost delay risk prediction for a logistics operator.
