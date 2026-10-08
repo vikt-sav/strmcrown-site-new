@@ -1,12 +1,20 @@
 ---
 title: "Конкурсы и хакатоны"
 description: "Хакатоны и соревнования, в которых я принимал участие"
-lastmod: 2026-09-06
+lastmod: 2026-10-08
 ---
 
 Здесь собраны хакатоны и конкурсы, в которых я принимал участие.
 
 <div class="resources-grid">
+
+  <div class="resource-card">
+    <h3>Хакатон московского транспорта 2026</h3>
+    <p>Задача «ИИ-предиктор задержек транспорта»: стриминговый прогноз задержек по телеметрии NDTP.
+    В основном этапе набрал 21,5 балла (в топ-10 проходили 22–23).</p>
+    <p class="tech-line"><b>ml:</b> catboost, hmm-мэтчинг, onnx · <b>бэк:</b> fastapi, websocket · <b>фронт:</b> maplibre · docker</p>
+    <a href="https://mt-hackathon.ru" target="_blank" class="resource-link">Подробнее →</a>
+  </div>
 
   <div class="resource-card">
     <h3>МТС True Tech Hack 2026</h3>

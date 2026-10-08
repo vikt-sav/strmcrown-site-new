@@ -10,6 +10,20 @@ lastmod: 2026-10-08
 
   <div class="resource-card">
     <div class="book-header">
+      <h3>Transport Delay Predictor</h3>
+      <p class="book-author">Стриминговый ML • гео-мэтчинг (HMM) • realtime-дашборд</p>
+    </div>
+    <p class="book-review">
+      Потоковый прогноз задержек городского транспорта: бинарный протокол NDTP по TCP, GPS-мэтчинг
+      с расписанием, HMM-привязка треков к улицам OSM, CatBoost на 69 признаках со строгой антиутечкой.
+      Честный стриминг-eval: MAE 42 с против 93 с у бейзлайна. Дашборд диспетчера на MapLibre
+      с What-if сценариями, Docker Compose (3 сервиса), ONNX-экспорт, 18 тестов.
+    </p>
+    <a href="https://github.com/vikt-sav/transport-delay-predictor" target="_blank" class="resource-link">GitHub →</a>
+  </div>
+
+  <div class="resource-card">
+    <div class="book-header">
       <h3>CargaPronto: прогноз задержек доставки</h3>
       <p class="book-author">Машинное обучение • кластеризация + классификация • учебный проект</p>
     </div>
