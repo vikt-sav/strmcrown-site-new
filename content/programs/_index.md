@@ -1,7 +1,7 @@
 ---
 title: "Программы"
 description: "Мои открытые проекты и полезные инструменты"
-lastmod: 2026-10-08
+lastmod: 2026-10-10
 ---
 
 Здесь собраны мои проекты, скрипты и приложения.
@@ -21,6 +21,42 @@ lastmod: 2026-10-08
       Решение задачи хакатона, собранное соло за 2 дня с агентами, затем доведено до репозитория.
     </p>
     <a href="https://github.com/vikt-sav/transport-delay-predictor" target="_blank" class="resource-link">GitHub →</a>
+  </div>
+
+  <div class="resource-card">
+    <div class="book-header">
+      <h3>Norbert AI</h3>
+      <p class="book-author">ИИ-ассистент</p>
+    </div>
+    <p class="book-review">
+      Norbert AI -- готовая архитектура для создания интеллектуальных ассистентов. Семантический поиск, граф, RAG, веб-поиск и поиск по научным базам, аннотирование и аналитика через LLM.
+    </p>
+    <a href="https://github.com/vikt-sav/norbert-ai" target="_blank" class="resource-link">GitHub →</a>
+  </div>
+
+  <div class="resource-card">
+    <div class="book-header">
+      <h3>VLM Defect Detection</h3>
+      <p class="book-author">Визуальный контроль качества • Qwen2.5-VL • QLoRA fine-tuning</p>
+    </div>
+    <p class="book-review">
+      Пайплайн инспекции дефектов устройств на vision-language модели: дообучение Qwen2.5-VL-3B через QLoRA,
+      полный цикл датасет → обучение → GGUF → Ollama. Сравнение трёх подходов на эталонном сете из 419 изображений
+      (6 категорий MVTec AD): fine-tuned VLM обходит CV-baseline — F1 0.84 против 0.75, recall 0.93 и 100% валидного JSON.
+      Структурированный ответ (поломка/норма, тип, локализация, критичность), 35 тестов, FastAPI, CI.
+    </p>
+    <a href="https://github.com/vikt-sav/vLM-defect-detection" target="_blank" class="resource-link">GitHub →</a>
+  </div>
+
+  <div class="resource-card">
+    <div class="book-header">
+      <h3>Multi-Agent Translation Evaluator</h3>
+      <p class="book-author">Оценка качества перевода</p>
+    </div>
+    <p class="book-review">
+      Система межагентной оценки качества машинного перевода (англ → рус) с помощью нескольких специализированных LLM-агентов и модератора. Используется для научных исследований.
+    </p>
+    <a href="https://github.com/vikt-sav/multi-agent-translation-evaluator" target="_blank" class="resource-link">GitHub →</a>
   </div>
 
   <div class="resource-card">
@@ -49,17 +85,6 @@ lastmod: 2026-10-08
 
   <div class="resource-card">
     <div class="book-header">
-      <h3>Multi-Agent Translation Evaluator</h3>
-      <p class="book-author">Оценка качества перевода</p>
-    </div>
-    <p class="book-review">
-      Система межагентной оценки качества машинного перевода (англ → рус) с помощью нескольких специализированных LLM-агентов и модератора. Используется для научных исследований.
-    </p>
-    <a href="https://github.com/vikt-sav/multi-agent-translation-evaluator" target="_blank" class="resource-link">GitHub →</a>
-  </div>
-
-  <div class="resource-card">
-    <div class="book-header">
       <h3>JPG to PDF Compiler</h3>
       <p class="book-author">Конвертер изображений</p>
     </div>
@@ -67,17 +92,6 @@ lastmod: 2026-10-08
       Простой скрипт, который автоматически собирает все пронумерованные JPG-файлы в папке и объединяет их в один PDF-документ.
     </p>
     <a href="https://github.com/vikt-sav/jpg-to-pdf-compiler" target="_blank" class="resource-link">GitHub →</a>
-  </div>
-
-  <div class="resource-card">
-    <div class="book-header">
-      <h3>Norbert AI</h3>
-      <p class="book-author">ИИ-ассистент</p>
-    </div>
-    <p class="book-review">
-      Norbert AI -- готовая архитектура для создания интеллектуальных ассистентов. Семантический поиск, граф, RAG, веб-поиск и поиск по научным базам, аннотирование и аналитика через LLM.
-    </p>
-    <a href="https://github.com/vikt-sav/norbert-ai" target="_blank" class="resource-link">GitHub →</a>
   </div>
 
   <div class="resource-card">
@@ -92,3 +106,4 @@ lastmod: 2026-10-08
     </p>
     <a href="https://github.com/vikt-sav/user-age-prediction-ml" target="_blank" class="resource-link">GitHub →</a>
   </div>
+</div>
