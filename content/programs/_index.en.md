@@ -14,7 +14,7 @@ This page features a collection of my projects, scripts, and applications.
       <p class="book-author">Moscow Public Transportation Hackathon • Streaming ML • Geo-matching (HMM)</p>
     </div>
     <p class="book-review">
-      Streaming public transit delay prediction: NDTP binary protocol over TCP, GPS matching
+      Streaming prediction of public transit delays: binary NDTP protocol over TCP, GPS matching
       with schedules, HMM mapping of tracks to OSM streets, CatBoost on 69 features with strict anti-leakage.
       Fair streaming evaluation: MAE 42 s vs. 93 s for the baseline. Dispatcher dashboard on MapLibre
       with “what-if” scenarios, Docker Compose (3 services), ONNX export, 18 tests.
@@ -29,7 +29,7 @@ This page features a collection of my projects, scripts, and applications.
       <p class="book-author">AI Assistant</p>
     </div>
     <p class="book-review">
-      Norbert AI — a ready-to-use architecture for building intelligent assistants. Semantic search, graph, RAG, web search, and scientific database search, annotation, and analytics via LLM.
+      Norbert AI — a ready-to-use architecture for building intelligent assistants. Semantic search, graph, RAG, web search and scientific database search, annotation, and analytics via LLM.
     </p>
     <a href="https://github.com/vikt-sav/norbert-ai" target="_blank" class="resource-link">GitHub →</a>
   </div>
@@ -37,13 +37,13 @@ This page features a collection of my projects, scripts, and applications.
   <div class="resource-card">
     <div class="book-header">
       <h3>VLM Defect Detection</h3>
-      <p class="book-author">Visual Quality Inspection • Qwen2.5-VL • QLoRA fine-tuning</p>
+      <p class="book-author">Visual Quality Control • Qwen2.5-VL • QLoRA fine-tuning</p>
     </div>
     <p class="book-review">
-      A device defect inspection pipeline built on a vision-language model: fine-tuning Qwen2.5-VL-3B via QLoRA,
-      full cycle from dataset to training, GGUF export, and Ollama inference. Three approaches compared on a
-      419-image evaluation set (6 MVTec AD categories): the fine-tuned VLM beats the CV baseline with F1 0.84 vs. 0.75,
-      recall 0.93, and 100% valid JSON. Structured output (defect/normal, type, location, severity), 35 tests, FastAPI, CI.
+      Device defect inspection pipeline based on a vision-language model: fine-tuning Qwen2.5-VL-3B using QLoRA,
+      full cycle: dataset → training → GGUF → Ollama. Comparison of three approaches on a benchmark dataset of 419 images
+      (6 MVTec AD categories): the fine-tuned VLM outperforms the CV baseline—F1 0.84 vs. 0.75, recall 0.93, and 100% valid JSON.
+      Structured response (failure/normal, type, location, severity), 35 tests, FastAPI, CI.
     </p>
     <a href="https://github.com/vikt-sav/vLM-defect-detection" target="_blank" class="resource-link">GitHub →</a>
   </div>
@@ -61,8 +61,8 @@ This page features a collection of my projects, scripts, and applications.
 
   <div class="resource-card">
     <div class="book-header">
-      <h3>CargaPronto: delivery delay prediction</h3>
-      <p class="book-author">Machine learning • clustering + classification • educational project</p>
+      <h3>CargaPronto: Delivery Delay Prediction</h3>
+      <p class="book-author">Machine Learning • Clustering + Classification • Educational Project</p>
     </div>
     <p class="book-review">
       K-Means customer segmentation (geography + RFM profiles) and CatBoost delay risk prediction for a logistics operator.
@@ -96,11 +96,11 @@ This page features a collection of my projects, scripts, and applications.
 
   <div class="resource-card">
     <div class="book-header">
-      <h3>Predicting User Age Based on Online Behavior</h3>
+      <h3>Predicting Users&#x27; Ages Based on Online Behavior</h3>
       <p class="book-author">Machine Learning • Multiclass Classification</p>
     </div>
     <p class="book-review">
-      A learning project to build a model for predicting a user’s age category (0–4) based on internet behavior data. 
+      A course project to build a model for predicting a user’s age category (0–4) based on internet behavior data. 
       Linear models, feature engineering, metric analysis, and visualization were used.
       Goal: F1-macro ≥ 0.75.
     </p>
